@@ -211,13 +211,20 @@
         <p>أكملي البيانات التالية وسنتواصل معك خلال 24 ساعة لتأكيد حجزك</p>
       </div>
 
-      <form id="enrollForm" onsubmit="handleSubmit(event)">
+      <form id="enrollForm"
+            action="https://formspree.io/f/xdavwabe"
+            method="POST">
+
+        <!-- Redirect to thank you page after submission -->
+        <input type="hidden" name="_next" value="https://moadpo.github.io/Makeup-Ramli/thankyou.html" />
+        <!-- Custom subject line in your email inbox -->
+        <input type="hidden" name="_subject" value="تسجيل جديد — ميكاب رملي 💄" />
 
         <div class="form-group">
           <label>الاسم الكامل <span>*</span></label>
           <div class="input-wrap">
             <i class="fas fa-user input-icon"></i>
-            <input type="text" name="fullname" placeholder="أدخلي اسمك الكامل" required />
+            <input type="text" name="الاسم الكامل" placeholder="أدخلي اسمك الكامل" required />
           </div>
         </div>
 
@@ -225,7 +232,7 @@
           <label>المدينة <span>*</span></label>
           <div class="input-wrap">
             <i class="fas fa-map-marker-alt input-icon"></i>
-            <input type="text" name="city" placeholder="مثال: الرياض، دبي، القاهرة..." required />
+            <input type="text" name="المدينة" placeholder="مثال: الدار البيضاء، مراكش، فاس..." required />
           </div>
         </div>
 
@@ -233,29 +240,29 @@
           <label>رقم الهاتف (واتساب) <span>*</span></label>
           <div class="input-wrap">
             <i class="fas fa-phone input-icon"></i>
-            <input type="tel" name="phone" placeholder="+966 5XX XXX XXXX" required />
+            <input type="tel" name="رقم الهاتف" placeholder="+212 6XX XXX XXX" required />
           </div>
         </div>
 
         <div class="form-group">
           <label>اختاري نوع الدرس <span>*</span></label>
           <div class="course-options">
-            <input type="radio" name="courseType" id="group" value="group" class="course-option" />
+            <input type="radio" name="نوع الدرس" id="group" value="دروس جماعية — 4000 د.م" class="course-option" />
             <label for="group" class="course-option-label">
               <span class="opt-icon"><i class="fas fa-users"></i></span>
               <span class="opt-title">دروس جماعية</span>
-              <span class="opt-price">$99 للدورة</span>
+              <span class="opt-price">4000 د.م</span>
             </label>
-            <input type="radio" name="courseType" id="private" value="private" class="course-option" checked />
+            <input type="radio" name="نوع الدرس" id="private" value="درس خاص — 6000 د.م" class="course-option" checked />
             <label for="private" class="course-option-label">
               <span class="opt-icon"><i class="fas fa-user"></i></span>
               <span class="opt-title">درس خاص</span>
-              <span class="opt-price">$149 للدرس</span>
+              <span class="opt-price">6000 د.م</span>
             </label>
           </div>
         </div>
 
-        <button type="submit" class="submit-btn">
+        <button type="submit" class="submit-btn" id="submitBtn">
           <i class="fas fa-arrow-left"></i> أكملي التسجيل الآن
         </button>
         <p class="form-note"><i class="fas fa-lock"></i> بياناتك محمية وآمنة تماماً</p>
@@ -273,13 +280,12 @@
   if (type === 'group') document.getElementById('group').checked = true;
   else document.getElementById('private').checked = true;
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.submit-btn');
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري المعالجة...';
+  // Show loading state on submit
+  document.getElementById('enrollForm').addEventListener('submit', function() {
+    const btn = document.getElementById('submitBtn');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
     btn.disabled = true;
-    setTimeout(() => { window.location.href = 'thankyou.html'; }, 1200);
-  }
+  });
 </script>
 </body>
 </html>
