@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ميكاب رملي | دروس مكياج احترافية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F7EEE5;
+      --blush: #EDD9CC;
+      --rose: #B07A6E;
+      --mauve: #9E6B72;
+      --brown: #7C5C52;
+      --dark: #3E2A24;
+      --white: #FDFAF7;
+      --text: #4A3228;
+      --muted: #8A6E65;
+      --gold: #C9A97A;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Tajawal', sans-serif; background: var(--white); color: var(--text); direction: rtl; }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed; top: 0; right: 0; left: 0; z-index: 100;
+      background: rgba(253,250,247,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(176,122,110,0.15);
+      padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 72px;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--rose); font-style: italic; text-decoration: none; letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--rose); }
+    .nav-cta { background: var(--rose); color: #fff; border: none; padding: 0.55rem 1.4rem; border-radius: 50px; font-family: 'Tajawal', sans-serif; font-size: 0.9rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .nav-cta:hover { background: var(--brown); transform: translateY(-1px); }
+    .hamburger { display: none; font-size: 1.4rem; cursor: pointer; color: var(--rose); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--cream) 0%, var(--blush) 60%, #E8CEBF 100%);
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; padding: 100px 5% 60px; gap: 3rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B07A6E' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-content { position: relative; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(176,122,110,0.12); border: 1px solid rgba(176,122,110,0.3); color: var(--rose); padding: 0.35rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.2rem; letter-spacing: 0.5px; }
+    .hero-title { font-family: 'Tajawal', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 800; line-height: 1.15; color: var(--dark); margin-bottom: 0.3rem; }
+    .hero-title .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--rose); display: block; }
+    .hero-sub { font-size: 1.05rem; color: var(--muted); line-height: 1.7; margin: 1.2rem 0 1.5rem; max-width: 420px; }
+
+    /* Duration info badge */
+    .duration-info {
+      display: inline-flex; align-items: center; gap: 1rem;
+      background: rgba(62,42,36,0.07); border: 1px solid rgba(176,122,110,0.2);
+      border-radius: 14px; padding: 0.8rem 1.2rem; margin-bottom: 1.5rem; flex-wrap: wrap;
+    }
+    .duration-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.88rem; font-weight: 700; color: var(--dark); }
+    .duration-item i { color: var(--rose); font-size: 0.85rem; }
+    .duration-sep { color: rgba(176,122,110,0.4); }
+
+    .hero-price-badge { display: inline-flex; flex-direction: column; background: var(--rose); color: #fff; padding: 0.8rem 1.4rem; border-radius: 14px; margin-bottom: 1.8rem; gap: 0.1rem; }
+    .hero-price-badge .price-label { font-size: 0.75rem; opacity: 0.85; }
+    .hero-price-badge .price-row { display: flex; align-items: baseline; gap: 0.5rem; }
+    .hero-price-badge .price-main { font-size: 1.8rem; font-weight: 800; }
+    .hero-price-badge .price-old { text-decoration: line-through; opacity: 0.65; font-size: 1rem; }
+
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary { background: var(--rose); color: #fff; padding: 0.85rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .btn-primary:hover { background: var(--brown); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(176,122,110,0.35); }
+    .btn-outline { border: 2px solid var(--rose); color: var(--rose); padding: 0.85rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .btn-outline:hover { background: var(--rose); color: #fff; transform: translateY(-2px); }
+    .hero-quote { font-style: italic; color: var(--muted); font-size: 0.95rem; margin-top: 1.5rem; border-right: 3px solid var(--gold); padding-right: 0.8rem; }
+
+    .hero-visual { position: relative; }
+    .hero-img-wrap { border-radius: 24px; overflow: hidden; box-shadow: 0 30px 80px rgba(62,42,36,0.2); position: relative; }
+    .hero-img-wrap img { width: 100%; height: 520px; object-fit: cover; display: block; }
+    .hero-float-card { position: absolute; background: rgba(253,250,247,0.95); backdrop-filter: blur(10px); border-radius: 16px; padding: 1rem 1.3rem; box-shadow: 0 8px 32px rgba(62,42,36,0.15); border: 1px solid rgba(176,122,110,0.2); }
+    .hero-float-card.card-top { top: -18px; left: -24px; display: flex; align-items: center; gap: 0.6rem; }
+    .hero-float-card.card-bottom { bottom: 24px; left: -24px; text-align: center; }
+    .float-icon { font-size: 1.4rem; color: var(--rose); }
+    .float-label { font-size: 0.75rem; color: var(--muted); }
+    .float-value { font-size: 0.9rem; font-weight: 700; color: var(--dark); }
+    .stars { color: #E8A87C; font-size: 0.85rem; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 80px 5%; }
+    .section-tag { text-transform: uppercase; letter-spacing: 3px; font-size: 0.75rem; color: var(--rose); font-weight: 700; margin-bottom: 0.6rem; display: block; }
+    .section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 1rem; }
+    .section-title .italic { font-family: 'Playfair Display', serif; font-style: italic; color: var(--rose); }
+    .section-subtitle { font-size: 1rem; color: var(--muted); line-height: 1.7; max-width: 560px; margin: 0 auto; }
+    .text-center { text-align: center; }
+    .divider { width: 60px; height: 3px; background: linear-gradient(90deg, var(--rose), var(--gold)); border-radius: 2px; margin: 0.8rem auto 1.5rem; }
+
+    /* ── GALLERY ── */
+    .gallery-section { background: var(--white); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .gallery-item { border-radius: 18px; overflow: hidden; position: relative; cursor: pointer; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-item.tall { grid-row: span 2; }
+    .gallery-item.tall img { height: 460px; }
+    .gallery-item:not(.tall) img { height: 220px; }
+    .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(62,42,36,0.5) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 1rem; }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay span { color: #fff; font-size: 0.85rem; font-weight: 700; }
+
+    /* ── WHAT YOU'LL LEARN ── */
+    .learn-section { background: var(--cream); }
+    .learn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .learn-card { background: var(--white); border-radius: 20px; padding: 2rem 1.5rem; text-align: center; border: 1px solid rgba(176,122,110,0.12); transition: transform 0.25s, box-shadow 0.25s; cursor: default; }
+    .learn-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(176,122,110,0.15); }
+    .learn-icon { width: 60px; height: 60px; background: linear-gradient(135deg, var(--cream), var(--blush)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.4rem; color: var(--rose); border: 2px solid rgba(176,122,110,0.2); }
+    .learn-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 0.4rem; }
+    .learn-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── COURSES / OFFERS ── */
+    .courses-section { background: var(--cream); }
+    .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .course-card { background: var(--white); border-radius: 24px; overflow: hidden; box-shadow: 0 4px 20px rgba(62,42,36,0.08); border: 2px solid transparent; transition: all 0.3s; position: relative; }
+    .course-card:hover { border-color: var(--rose); transform: translateY(-4px); box-shadow: 0 20px 50px rgba(176,122,110,0.2); }
+    .course-card.featured { border-color: var(--rose); }
+    .course-badge-wrap { position: absolute; top: 16px; right: 16px; background: var(--rose); color: #fff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
+    .course-card-img { height: 200px; overflow: hidden; }
+    .course-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .course-card:hover .course-card-img img { transform: scale(1.04); }
+    .course-card-body { padding: 1.8rem; }
+    .course-type { text-transform: uppercase; letter-spacing: 2px; font-size: 0.72rem; color: var(--rose); font-weight: 700; margin-bottom: 0.5rem; }
+    .course-card-body h3 { font-size: 1.3rem; font-weight: 800; color: var(--dark); margin-bottom: 0.6rem; }
+    .course-card-body p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.2rem; }
+    .course-features { list-style: none; margin-bottom: 1.5rem; }
+    .course-features li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; color: var(--text); margin-bottom: 0.45rem; }
+    .course-features li i { color: var(--rose); font-size: 0.75rem; }
+    .course-price-row { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(176,122,110,0.12); padding-top: 1.2rem; gap: 1rem; }
+    .price-block .old-price { text-decoration: line-through; color: var(--muted); font-size: 0.9rem; }
+    .price-block .new-price { font-size: 1.6rem; font-weight: 800; color: var(--rose); }
+    .btn-enroll { background: var(--rose); color: #fff; padding: 0.7rem 1.4rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
+    .btn-enroll:hover { background: var(--brown); transform: translateY(-2px); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { background: var(--blush); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .testi-card { background: var(--white); border-radius: 20px; padding: 1.8rem; box-shadow: 0 4px 20px rgba(62,42,36,0.07); transition: transform 0.25s; }
+    .testi-card:hover { transform: translateY(-4px); }
+    .testi-quote { font-size: 2rem; color: var(--rose); opacity: 0.3; line-height: 1; margin-bottom: 0.8rem; }
+    .testi-text { font-size: 0.92rem; color: var(--text); line-height: 1.75; margin-bottom: 1.2rem; font-style: italic; }
+    .testi-author { display: flex; align-items: center; gap: 0.8rem; }
+    .testi-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(176,122,110,0.3); }
+    .testi-name { font-weight: 700; font-size: 0.9rem; color: var(--dark); }
+    .testi-city { font-size: 0.78rem; color: var(--muted); }
+
+    /* ── CTA BANNER ── */
+    .cta-banner { background: linear-gradient(135deg, var(--dark) 0%, #5C3D35 100%); color: #fff; padding: 80px 5%; text-align: center; }
+    .cta-banner h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; margin-bottom: 0.5rem; }
+    .cta-banner h2 .accent { color: var(--gold); font-family: 'Playfair Display', serif; font-style: italic; }
+    .cta-banner p { opacity: 0.8; font-size: 1rem; margin-bottom: 1.5rem; }
+    .cta-price-row { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .cta-price-new { font-size: 2.4rem; font-weight: 800; color: var(--gold); }
+    .cta-divider { color: rgba(255,255,255,0.3); font-size: 1.5rem; }
+    .cta-price-old { text-decoration: line-through; font-size: 1.2rem; opacity: 0.5; }
+    .btn-gold { background: linear-gradient(135deg, var(--gold), #E8C080); color: var(--dark); padding: 1rem 2.5rem; border-radius: 50px; font-weight: 800; font-size: 1.05rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(201,169,122,0.5); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--dark); color: rgba(255,255,255,0.7); padding: 3rem 5% 1.5rem; }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-brand .nav-logo { color: var(--gold); font-size: 1.6rem; display: block; margin-bottom: 0.8rem; text-decoration: none; }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.7; max-width: 260px; }
+    .footer-col h4 { color: #fff; font-size: 0.95rem; font-weight: 700; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
+    .footer-col ul li a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; }
+    .social-links { display: flex; gap: 0.8rem; }
+    .social-links a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7); text-decoration: none; transition: background 0.2s, color 0.2s; }
+    .social-links a:hover { background: var(--rose); color: #fff; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 100px 5% 50px; }
+      .hero-visual { display: none; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item.tall img { height: 300px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      nav { padding: 0 1.2rem; }
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      section { padding: 60px 4%; }
+      .hero { padding: 90px 4% 50px; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item.tall img, .gallery-item:not(.tall) img { height: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo">ميكاب رملي</a>
+  <ul class="nav-links">
+    <li><a href="index.html">الرئيسية</a></li>
+    <li><a href="course-details.html">تفاصيل الدروس</a></li>
+    <li><a href="contact.html">تواصلي معنا</a></li>
+  </ul>
+  <a href="signin.html" class="nav-cta">سجلي الآن</a>
+  <div class="hamburger"><i class="fas fa-bars"></i></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-badge"><i class="fas fa-star"></i> دروس مكياج خاصة واحترافية</span>
+    <h1 class="hero-title">
+      أتقني فن
+      <span class="accent">المكياج</span>
+    </h1>
+    <p class="hero-sub">
+      دروس مكياج خاصة وجماعية مع خبيرة التجميل رملي — تعلمي أسرار الجمال والمكياج الاحترافي من الصفر حتى الاحتراف.
+    </p>
+
+    <!-- Duration info -->
+    <div class="duration-info">
+      <div class="duration-item"><i class="fas fa-clock"></i> 7 ساعات يومياً</div>
+      <span class="duration-sep">·</span>
+      <div class="duration-item"><i class="fas fa-calendar-alt"></i> 3 أيام</div>
+      <span class="duration-sep">·</span>
+      <div class="duration-item"><i class="fas fa-graduation-cap"></i> تدريب مكثّف</div>
+    </div>
+
+    <div class="hero-price-badge">
+      <span class="price-label">سعر الدرس الخاص</span>
+      <div class="price-row">
+        <span class="price-main">6000 د.م</span>
+      </div>
+    </div>
+    <div class="hero-buttons">
+      <a href="signin.html" class="btn-primary"><i class="fas fa-arrow-left"></i> سجلي الآن</a>
+      <a href="course-details.html" class="btn-outline"><i class="fas fa-play-circle"></i> تفاصيل الدروس</a>
+    </div>
+    <p class="hero-quote">استثمري في نفسك، أنتِ تستحقين</p>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-float-card card-top">
+      <i class="fas fa-crown float-icon"></i>
+      <div>
+        <div class="float-value">أسرار الجمال</div>
+        <div class="float-label">تقنيات المشاهير</div>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" alt="خبيرة مكياج" />
+    </div>
+    <div class="hero-float-card card-bottom">
+      <div class="stars">★★★★★</div>
+      <div class="float-value" style="font-size:0.85rem;">+500 طالبة</div>
+      <div class="float-label">قيّمن دروسنا 5 نجوم</div>
+    </div>
+  </div>
+</section>
+
+<!-- MAKEUP COURSES GALLERY -->
+<section class="gallery-section">
+  <div class="text-center">
+    <span class="section-tag">معرض الأعمال</span>
+    <h2 class="section-title">من <span class="italic">دروس ميكاب رملي</span></h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">لمحات من جلسات التدريب والإطلالات التي نتعلمها معاً</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item tall">
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="مكياج سموكي" />
+      <div class="gallery-overlay"><span>تقنية Smoky Eye</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80" alt="مكياج طبيعي" />
+      <div class="gallery-overlay"><span>إطلالة طبيعية</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" alt="مكياج كامل" />
+      <div class="gallery-overlay"><span>مكياج الأساس</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&q=80" alt="مكياج سهرة" />
+      <div class="gallery-overlay"><span>إطلالة السهرة</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&q=80" alt="مكياج العيون" />
+      <div class="gallery-overlay"><span>فن العيون</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU'LL LEARN -->
+<section class="learn-section">
+  <div class="text-center">
+    <span class="section-tag">ما ستتعلمينه</span>
+    <h2 class="section-title">كل ما تحتاجينه <span class="italic">لإطلالة مثالية</span></h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">من الأساسيات إلى التقنيات الاحترافية، دروسنا مصممة لكل المستويات</p>
+  </div>
+  <div class="learn-grid">
+    <div class="learn-card">
+      <div class="learn-icon"><i class="fas fa-magic"></i></div>
+      <h3>الإطلالة اليومية</h3>
+      <p>مكياج خفيف وطبيعي لكل المناسبات اليومية</p>
+    </div>
+    <div class="learn-card">
+      <div class="learn-icon"><i class="fas fa-eye"></i></div>
+      <h3>إبراز ملامحك</h3>
+      <p>تقنيات تجعل ملامحك أكثر جمالاً وتميزاً</p>
+    </div>
+    <div class="learn-card">
+      <div class="learn-icon"><i class="fas fa-paint-brush"></i></div>
+      <h3>تقنيات احترافية</h3>
+      <p>من المبتدئة إلى المحترفة خطوة بخطوة</p>
+    </div>
+    <div class="learn-card">
+      <div class="learn-icon"><i class="fas fa-camera"></i></div>
+      <h3>مكياج التصوير</h3>
+      <p>إطلالة مثالية أمام الكاميرا في كل صورة</p>
+    </div>
+    <div class="learn-card">
+      <div class="learn-icon"><i class="fas fa-star"></i></div>
+      <h3>الثقة بالنفس</h3>
+      <p>اشعري بأفضل نسخة منك من الداخل والخارج</p>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES / OFFERS -->
+<section class="courses-section">
+  <div class="text-center">
+    <span class="section-tag">العروض المتاحة</span>
+    <h2 class="section-title">اختاري <span class="italic">الدرس المناسب</span> لك</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">عروض مصممة لتناسب جميع الاحتياجات والمستويات</p>
+  </div>
+  <div class="courses-grid">
+
+    <!-- Group -->
+    <div class="course-card">
+      <div class="course-card-img">
+        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80" alt="دروس جماعية" />
+      </div>
+      <div class="course-card-body">
+        <div class="course-type"><i class="fas fa-users"></i> دروس جماعية</div>
+        <h3>باقة المجموعة</h3>
+        <p>تعلمي مع مجموعة صغيرة في جو ودّي ومحفّز، وبتكلفة أقل مع نفس الجودة العالية.</p>
+        <ul class="course-features">
+          <li><i class="fas fa-check"></i> مجموعات لا تتجاوز 6 طالبات</li>
+          <li><i class="fas fa-check"></i> 7 ساعات يومياً لمدة 3 أيام</li>
+          <li><i class="fas fa-check"></i> تفاعل مع زميلات وتبادل خبرات</li>
+          <li><i class="fas fa-check"></i> تدريب عملي مكثّف</li>
+        </ul>
+        <div class="course-price-row">
+          <div class="price-block">
+            <div class="new-price">4000 د.م</div>
+          </div>
+          <a href="signin.html?type=group" class="btn-enroll">سجلي الآن</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Private -->
+    <div class="course-card featured">
+      <div class="course-badge-wrap">الأكثر طلباً ✦</div>
+      <div class="course-card-img">
+        <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&q=80" alt="دروس خاصة" />
+      </div>
+      <div class="course-card-body">
+        <div class="course-type"><i class="fas fa-user"></i> دروس خاصة</div>
+        <h3>الدرس الخاص</h3>
+        <p>اهتمام كامل ومخصص لكِ وحدك — برنامج يناسب مستواك واحتياجاتك تماماً.</p>
+        <ul class="course-features">
+          <li><i class="fas fa-check"></i> جلسة خاصة فردية معكِ</li>
+          <li><i class="fas fa-check"></i> 7 ساعات يومياً لمدة 3 أيام</li>
+          <li><i class="fas fa-check"></i> برنامج مخصص لأسلوبك</li>
+          <li><i class="fas fa-check"></i> متابعة شخصية بعد الدرس</li>
+        </ul>
+        <div class="course-price-row">
+          <div class="price-block">
+            <div class="new-price">6000 د.م</div>
+          </div>
+          <a href="signin.html?type=private" class="btn-enroll">سجلي الآن</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="text-center">
+    <span class="section-tag">آراء الطالبات</span>
+    <h2 class="section-title">ماذا قالت <span class="italic">طالباتنا</span></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">ما كنت كنعرف كيف نطبق الفونداسيون مزيان، بعد 3 أيام مع رملي واللا تبدّل! تعلمت تقنيات ما تعلمتها ف أي بلاص.</p>
+      <div class="testi-author">
+        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&q=80" class="testi-avatar" alt="سارة" />
+        <div>
+          <div class="testi-name">سارة بنموسى</div>
+          <div class="testi-city"><span class="stars">★★★★★</span> الدار البيضاء</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">الدرس الجماعي كان تجربة رائعة! الأجواء كانت حلوة والرفيقات كانو مزيانين. رملي تشرح بكل صبر وتعطي وقتها لكل وحدة.</p>
+      <div class="testi-author">
+        <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&q=80" class="testi-avatar" alt="إيمان" />
+        <div>
+          <div class="testi-name">إيمان الزهراوي</div>
+          <div class="testi-city"><span class="stars">★★★★★</span> مراكش</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">خدت درس خاص وكان أحسن قرار! في 3 أيام تعلمت كل شي من الكونتور للسموكي آي. الآن أنا نديري مكياجي بثقة كاملة.</p>
+      <div class="testi-author">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&q=80" class="testi-avatar" alt="خديجة" />
+        <div>
+          <div class="testi-name">خديجة العلوي</div>
+          <div class="testi-city"><span class="stars">★★★★★</span> فاس</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <span class="section-tag" style="color:var(--gold);">عرض خاص محدود</span>
+  <h2>احجزي مكانك <span class="accent">الآن</span></h2>
+  <p>الأماكن محدودة — لا تفوّتي الفرصة</p>
+  <div class="cta-price-row">
+    <span class="cta-price-new">6000 د.م</span>
+    <span class="cta-divider">·</span>
+    <span style="color:rgba(255,255,255,0.7); font-size:1rem;">للدرس الخاص</span>
+    <span class="cta-divider">|</span>
+    <span class="cta-price-new" style="font-size:1.8rem;">4000 د.م</span>
+    <span style="color:rgba(255,255,255,0.7); font-size:1rem;">للدرس الجماعي</span>
+  </div>
+  <a href="signin.html" class="btn-gold"><i class="fas fa-arrow-left"></i> سجلي الآن واحجزي مكانك</a>
+  <p style="margin-top:1.2rem; font-size:0.82rem; opacity:0.6;">7 ساعات يومياً · 3 أيام تدريب مكثّف · ضمان الرضا</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">ميكاب رملي</a>
+      <p>دروس مكياج خاصة واحترافية — لكل امرأة تستحق أن تشعر بجمالها</p>
+    </div>
+    <div class="footer-col">
+      <h4>روابط سريعة</h4>
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="course-details.html">تفاصيل الدروس</a></li>
+        <li><a href="signin.html">التسجيل</a></li>
+        <li><a href="contact.html">تواصلي معنا</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>الدروس</h4>
+      <ul>
+        <li><a href="signin.html?type=group">دروس جماعية — 4000 د.م</a></li>
+        <li><a href="signin.html?type=private">دروس خاصة — 6000 د.م</a></li>
+        <li><a href="course-details.html">المنهج الدراسي</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 ميكاب رملي · جميع الحقوق محفوظة</span>
+    <div class="social-links">
+      <a href="#" aria-label="انستقرام"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" aria-label="تيك توك"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

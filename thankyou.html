@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>شكراً لك | ميكاب رملي</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F7EEE5; --blush: #EDD9CC; --rose: #B07A6E; --mauve: #9E6B72;
+      --brown: #7C5C52; --dark: #3E2A24; --white: #FDFAF7; --text: #4A3228;
+      --muted: #8A6E65; --gold: #C9A97A;
+    }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(135deg, var(--cream) 0%, var(--blush) 50%, #E8CEBF 100%);
+      min-height: 100vh; color: var(--text); direction: rtl;
+      display: flex; flex-direction: column;
+    }
+    nav {
+      position: fixed; top: 0; right: 0; left: 0; z-index: 100;
+      background: rgba(253,250,247,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(176,122,110,0.15);
+      padding: 0 2rem; display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif; font-size: 1.5rem;
+      color: var(--rose); font-style: italic; text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--rose); }
+
+    .page { flex: 1; display: flex; align-items: center; justify-content: center; padding: 100px 1.5rem 3rem; }
+
+    .ty-card {
+      background: var(--white);
+      border-radius: 32px;
+      box-shadow: 0 30px 80px rgba(62,42,36,0.16);
+      max-width: 680px; width: 100%;
+      overflow: hidden;
+      animation: fadeUp 0.7s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .ty-top {
+      background: linear-gradient(135deg, var(--brown) 0%, var(--dark) 100%);
+      padding: 3.5rem 3rem 2.5rem;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .ty-top::before {
+      content: '';
+      position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
+      width: 320px; height: 320px;
+      background: rgba(201,169,122,0.08); border-radius: 50%;
+    }
+    .confetti-row {
+      display: flex; justify-content: center; gap: 0.5rem;
+      margin-bottom: 1.5rem; position: relative; z-index: 1;
+    }
+    .confetti-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      animation: bounce 1.2s ease infinite;
+    }
+    .confetti-dot:nth-child(1) { background: var(--gold); animation-delay: 0s; }
+    .confetti-dot:nth-child(2) { background: #E8A87C; animation-delay: 0.15s; }
+    .confetti-dot:nth-child(3) { background: var(--rose); animation-delay: 0.3s; }
+    .confetti-dot:nth-child(4) { background: var(--gold); animation-delay: 0.45s; }
+    .confetti-dot:nth-child(5) { background: #E8A87C; animation-delay: 0.6s; }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .check-circle {
+      width: 90px; height: 90px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #E8C080);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2.2rem; color: var(--dark);
+      box-shadow: 0 8px 32px rgba(201,169,122,0.5);
+      position: relative; z-index: 1;
+      animation: popIn 0.5s 0.3s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+    @keyframes popIn {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .ty-top h1 {
+      font-size: 2rem; font-weight: 800; color: #fff;
+      margin-bottom: 0.5rem; position: relative; z-index: 1;
+    }
+    .ty-top h1 .accent {
+      font-family: 'Playfair Display', serif; font-style: italic; color: var(--gold);
+    }
+    .ty-top p {
+      color: rgba(255,255,255,0.8); font-size: 1rem; line-height: 1.7;
+      max-width: 400px; margin: 0 auto; position: relative; z-index: 1;
+    }
+
+    .ty-body { padding: 2.5rem 3rem; }
+
+    .steps-title {
+      text-align: center; font-size: 0.95rem; font-weight: 700;
+      color: var(--dark); margin-bottom: 1.8rem;
+    }
+    .steps-title span { color: var(--rose); }
+
+    .steps { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2.5rem; }
+    .step {
+      display: flex; align-items: flex-start; gap: 1rem;
+      background: var(--cream); border-radius: 16px; padding: 1.1rem 1.3rem;
+      border: 1px solid rgba(176,122,110,0.12);
+      animation: fadeUp 0.5s ease both;
+    }
+    .step:nth-child(1) { animation-delay: 0.4s; }
+    .step:nth-child(2) { animation-delay: 0.55s; }
+    .step:nth-child(3) { animation-delay: 0.7s; }
+    .step-num {
+      width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--rose), var(--mauve));
+      color: #fff; display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; font-weight: 800;
+    }
+    .step-content h3 { font-size: 0.92rem; font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; }
+    .step-content p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+
+    .divider-line { height: 1px; background: rgba(176,122,110,0.15); margin: 0 0 2rem; }
+
+    .quote-block {
+      background: linear-gradient(135deg, rgba(176,122,110,0.08), rgba(201,169,122,0.08));
+      border-radius: 16px; padding: 1.5rem;
+      border-right: 4px solid var(--gold);
+      margin-bottom: 2rem; text-align: center;
+    }
+    .quote-block p {
+      font-style: italic; color: var(--text); font-size: 0.95rem;
+      line-height: 1.75;
+    }
+    .quote-block .quote-author { font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem; font-weight: 700; }
+
+    .ty-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+    }
+    .btn-primary {
+      background: var(--rose); color: #fff;
+      padding: 0.85rem 1.8rem; border-radius: 50px; text-decoration: none;
+      font-weight: 700; font-size: 0.95rem;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-primary:hover { background: var(--brown); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(176,122,110,0.3); }
+    .btn-whatsapp {
+      background: #25D366; color: #fff;
+      padding: 0.85rem 1.8rem; border-radius: 50px; text-decoration: none;
+      font-weight: 700; font-size: 0.95rem;
+      transition: opacity 0.2s, transform 0.15s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-whatsapp:hover { opacity: 0.88; transform: translateY(-2px); }
+
+    .ty-bottom {
+      background: var(--cream); padding: 1.5rem 3rem;
+      display: flex; align-items: center; justify-content: center; gap: 2.5rem;
+      flex-wrap: wrap; border-top: 1px solid rgba(176,122,110,0.12);
+    }
+    .ty-trust { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--muted); }
+    .ty-trust i { color: var(--rose); }
+
+    footer {
+      background: var(--dark); color: rgba(255,255,255,0.6);
+      text-align: center; padding: 1.2rem;
+      font-size: 0.82rem;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .ty-top, .ty-body { padding: 2rem 1.5rem; }
+      .ty-bottom { padding: 1.2rem 1.5rem; gap: 1rem; }
+      nav { padding: 0 1.2rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">ميكاب رملي</a>
+  <ul class="nav-links">
+    <li><a href="index.html">الرئيسية</a></li>
+    <li><a href="course-details.html">تفاصيل الدروس</a></li>
+    <li><a href="contact.html">تواصلي معنا</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="ty-card">
+
+    <div class="ty-top">
+      <div class="confetti-row">
+        <div class="confetti-dot"></div>
+        <div class="confetti-dot"></div>
+        <div class="confetti-dot"></div>
+        <div class="confetti-dot"></div>
+        <div class="confetti-dot"></div>
+      </div>
+      <div class="check-circle"><i class="fas fa-check"></i></div>
+      <h1>تم التسجيل بنجاح! <span class="accent">✦</span></h1>
+      <p>مبروك! طلبك وصلنا بنجاح. سنتواصل معكِ على الواتساب خلال 24 ساعة لتأكيد موعدك وتفاصيل الدرس.</p>
+    </div>
+
+    <div class="ty-body">
+      <p class="steps-title">ماذا يحدث <span>بعد ذلك؟</span></p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>مراجعة طلبك</h3>
+            <p>سيتم مراجعة بيانات التسجيل وتأكيد نوع الدرس المختار في أقرب وقت.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>التواصل عبر الواتساب</h3>
+            <p>سنتواصل معكِ على الرقم المسجّل خلال 24 ساعة لتأكيد الموعد المناسب لكِ.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>ابدئي رحلتك!</h3>
+            <p>حضّري نفسك لتجربة تعليمية استثنائية — دروسك الأولى على وشك البدء!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider-line"></div>
+
+      <div class="quote-block">
+        <p>"الحصول على المكياج الصحيح يحوّلك من عادي إلى لا يُنسى — أنتِ الآن خطوة أقرب من نسختك الأجمل"</p>
+        <div class="quote-author">— رملي، خبيرة ميكاب رملي</div>
+      </div>
+
+      <div class="ty-actions">
+        <a href="index.html" class="btn-primary"><i class="fas fa-home"></i> العودة للرئيسية</a>
+        <a href="https://wa.me/+966500000000" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> تواصلي على الواتساب</a>
+      </div>
+    </div>
+
+    <div class="ty-bottom">
+      <div class="ty-trust"><i class="fas fa-shield-alt"></i> بياناتك آمنة</div>
+      <div class="ty-trust"><i class="fas fa-clock"></i> رد خلال 24 ساعة</div>
+      <div class="ty-trust"><i class="fas fa-heart"></i> ضمان الرضا</div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 <a href="index.html">ميكاب رملي</a> · جميع الحقوق محفوظة</p>
+</footer>
+
+</body>
+</html>
