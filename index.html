@@ -118,7 +118,7 @@
     .stars { color: #E8A87C; font-size: 0.85rem; }
 
     /* ── SECTION BASE ── */
-    section { padding: 80px 5%; }
+    section { padding: 50px 5%; }
     .section-tag { text-transform: uppercase; letter-spacing: 3px; font-size: 0.75rem; color: var(--rose); font-weight: 700; margin-bottom: 0.6rem; display: block; }
     .section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 1rem; }
     .section-title .italic { font-family: 'Playfair Display', serif; font-style: italic; color: var(--rose); }
@@ -128,22 +128,17 @@
 
     /* ── GALLERY ── */
     .gallery-section { background: var(--white); }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto auto;
-      gap: 1rem;
-      margin-top: 2.5rem;
+    .gallery-single { margin-top: 2.5rem; }
+    .gallery-item-single {
+      border-radius: 20px; overflow: hidden;
+      position: relative; cursor: pointer;
+      max-height: 480px;
     }
-    .gallery-item { border-radius: 18px; overflow: hidden; position: relative; cursor: pointer; }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
-    .gallery-item:hover img { transform: scale(1.06); }
-    .gallery-item.tall { grid-row: span 2; }
-    .gallery-item.tall img { height: 460px; }
-    .gallery-item:not(.tall) img { height: 220px; }
-    .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(62,42,36,0.5) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 1rem; }
-    .gallery-item:hover .gallery-overlay { opacity: 1; }
-    .gallery-overlay span { color: #fff; font-size: 0.85rem; font-weight: 700; }
+    .gallery-item-single img { width: 100%; height: 480px; object-fit: cover; display: block; transition: transform 0.4s; }
+    .gallery-item-single:hover img { transform: scale(1.03); }
+    .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(62,42,36,0.5) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 1.2rem; }
+    .gallery-item-single:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay span { color: #fff; font-size: 1rem; font-weight: 700; }
 
     /* ── WHAT YOU'LL LEARN ── */
     .learn-section { background: var(--cream); }
@@ -313,16 +308,6 @@
     <div class="hero-mobile-img">
       <div class="hero-mobile-img-wrap">
         <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=700&q=80" alt="دروس مكياج رملي" />
-        <div class="hero-mobile-img-overlay">
-          <div class="hero-mobile-price">
-            <small>سعر الدرس الخاص</small>
-            6000 د.م
-          </div>
-          <div class="hero-mobile-stars">
-            ★★★★★
-            <span>+500 طالبة</span>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -367,26 +352,10 @@
     <div class="divider"></div>
     <p class="section-subtitle">لمحات من جلسات التدريب والإطلالات التي نتعلمها معاً</p>
   </div>
-  <div class="gallery-grid">
-    <div class="gallery-item tall">
-      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="مكياج سموكي" />
+  <div class="gallery-single">
+    <div class="gallery-item-single">
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80" alt="مكياج سموكي" />
       <div class="gallery-overlay"><span>تقنية Smoky Eye</span></div>
-    </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80" alt="مكياج طبيعي" />
-      <div class="gallery-overlay"><span>إطلالة طبيعية</span></div>
-    </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" alt="مكياج كامل" />
-      <div class="gallery-overlay"><span>مكياج الأساس</span></div>
-    </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&q=80" alt="مكياج سهرة" />
-      <div class="gallery-overlay"><span>إطلالة السهرة</span></div>
-    </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&q=80" alt="مكياج العيون" />
-      <div class="gallery-overlay"><span>فن العيون</span></div>
     </div>
   </div>
 </section>
