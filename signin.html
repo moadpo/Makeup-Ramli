@@ -211,12 +211,8 @@
         <p>أكملي البيانات التالية وسنتواصل معك خلال 24 ساعة لتأكيد حجزك</p>
       </div>
 
-      <form id="enrollForm"
-            action="https://formspree.io/f/xdavwabe"
-            method="POST">
+      <form id="enrollForm">
 
-        <!-- Redirect to thank you page after submission -->
-        <input type="hidden" name="_next" value="https://moadpo.github.io/Makeup-Ramli/thankyou.html" />
         <!-- Custom subject line in your email inbox -->
         <input type="hidden" name="_subject" value="تسجيل جديد — ميكاب رملي 💄" />
 
@@ -280,11 +276,31 @@
   if (type === 'group') document.getElementById('group').checked = true;
   else document.getElementById('private').checked = true;
 
-  // Show loading state on submit
-  document.getElementById('enrollForm').addEventListener('submit', function() {
+  // Submit via AJAX so WE control the redirect (not Formspree)
+  document.getElementById('enrollForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
     const btn = document.getElementById('submitBtn');
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
     btn.disabled = true;
+
+    const data = new FormData(this);
+
+    try {
+      const res = await fetch('https://formspree.io/f/xdavwabe', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        window.location.href = 'thankyou.html';
+      } else {
+        btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> حدث خطأ، حاولي مجدداً';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> حدث خطأ، حاولي مجدداً';
+      btn.disabled = false;
+    }
   });
 </script>
 </body>
