@@ -261,13 +261,9 @@
     <div class="contact-form-wrap">
       <h3>أرسلي رسالتك</h3>
       <p>أو اتركي بياناتك وسنتواصل معكِ بأسرع وقت</p>
-      <form id="contactForm"
-            action="https://formspree.io/f/xdavwabe"
-            method="POST">
+      <form id="contactForm">
 
-        <!-- Different subject so you can tell apart from signups -->
         <input type="hidden" name="_subject" value="رسالة تواصل جديدة — ميكاب رملي 📩" />
-        <input type="hidden" name="_next" value="https://moadpo.github.io/Makeup-Ramli/contact.html?sent=1" />
 
         <div class="form-row">
           <div class="form-group">
@@ -411,18 +407,33 @@
     if (!wasOpen) item.classList.add('open');
   }
 
-  // Show loading state while form submits to Formspree
-  document.getElementById('contactForm').addEventListener('submit', function() {
+  // Submit via AJAX — show success message on the page, never leave
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
     const btn = document.getElementById('contactSubmitBtn');
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
     btn.disabled = true;
-  });
 
-  // Show success message if redirected back with ?sent=1
-  if (new URLSearchParams(window.location.search).get('sent') === '1') {
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-  }
+    const data = new FormData(this);
+
+    try {
+      const res = await fetch('https://formspree.io/f/xdavwabe', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      } else {
+        btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> حدث خطأ، حاولي مجدداً';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> حدث خطأ، حاولي مجدداً';
+      btn.disabled = false;
+    }
+  });
 </script>
 </body>
 </html>
