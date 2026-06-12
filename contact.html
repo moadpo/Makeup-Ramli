@@ -22,7 +22,8 @@
       border-bottom: 1px solid rgba(176,122,110,0.15);
       padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 72px;
     }
-    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--rose); font-style: italic; text-decoration: none; }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo img { height: 52px; width: auto; object-fit: contain; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { text-decoration: none; color: var(--text); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover { color: var(--rose); }
@@ -189,7 +190,7 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">ميكاب رملي</a>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Makeup Ramli" /></a>
   <ul class="nav-links">
     <li><a href="index.html">الرئيسية</a></li>
     <li><a href="course-details.html">تفاصيل الدروس</a></li>
@@ -369,7 +370,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo">ميكاب رملي</a>
+      <a href="index.html" class="nav-logo"><img src="logo.png" alt="Makeup Ramli" /></a>
       <p>دروس مكياج خاصة واحترافية — لكل امرأة تستحق أن تشعر بجمالها</p>
     </div>
     <div class="footer-col">
