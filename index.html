@@ -33,7 +33,6 @@
       padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 72px;
     }
     .nav-logo { text-decoration: none; display: flex; align-items: center; }
-    .nav-logo img { height: 52px; width: auto; object-fit: contain; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { text-decoration: none; color: var(--text); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover { color: var(--rose); }
@@ -232,7 +231,7 @@
     /* ── FOOTER ── */
     footer { background: var(--dark); color: rgba(255,255,255,0.7); padding: 3rem 5% 1.5rem; }
     .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .footer-brand .nav-logo { color: var(--gold); font-size: 1.6rem; display: block; margin-bottom: 0.8rem; text-decoration: none; }
+    .footer-brand .nav-logo { color: var(--gold); font-size: 1.6rem; display: block; margin-bottom: 0.8rem; text-decoration: none; font-family: 'Playfair Display', serif; font-style: italic; }
     .footer-brand p { font-size: 0.88rem; line-height: 1.7; max-width: 260px; }
     .footer-col h4 { color: #fff; font-size: 0.95rem; font-weight: 700; margin-bottom: 1rem; }
     .footer-col ul { list-style: none; }
@@ -274,7 +273,22 @@
 
 <!-- NAVBAR -->
 <nav>
-  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Makeup Ramli" /></a>
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 195 52" height="46" xmlns="http://www.w3.org/2000/svg" style="display:block">
+      <circle cx="26" cy="26" r="22.5" fill="rgba(201,169,122,0.07)" stroke="#C9A97A" stroke-width="1.1"/>
+      <circle cx="26" cy="26" r="18" fill="none" stroke="#C9A97A" stroke-width="0.4" stroke-dasharray="2,3" opacity="0.5"/>
+      <path d="M24.5,3.5 L26,1 L27.5,3.5 L26,6 Z" fill="#C9A97A"/>
+      <path d="M24.5,46.5 L26,49 L27.5,46.5 L26,44 Z" fill="#C9A97A"/>
+      <path d="M10,37 L10,16 L19,27 L28,16 L28,37" fill="none" stroke="#B07A6E" stroke-width="2.3" stroke-linecap="butt" stroke-linejoin="miter"/>
+      <path d="M31,37 L31,16 L37,16 Q44,16 44,22 Q44,28 37,28 L31,28 M38,28 L44,37" fill="none" stroke="#C9A97A" stroke-width="2.3" stroke-linecap="butt" stroke-linejoin="miter"/>
+      <circle cx="38" cy="12" r="1.3" fill="#C9A97A" opacity="0.7"/>
+      <circle cx="14" cy="12" r="1.3" fill="#B07A6E" opacity="0.5"/>
+      <line x1="58" y1="13" x2="58" y2="39" stroke="#C9A97A" stroke-width="0.7" opacity="0.5"/>
+      <text x="68" y="24" font-family="'Playfair Display',Georgia,serif" font-size="11" font-weight="700" fill="#3E2A24" letter-spacing="3.5">MAKEUP</text>
+      <line x1="68" y1="29" x2="140" y2="29" stroke="#C9A97A" stroke-width="0.6" opacity="0.5"/>
+      <text x="68" y="41" font-family="'Playfair Display',Georgia,serif" font-size="13.5" font-style="italic" fill="#B07A6E" letter-spacing="1.5">Ramli</text>
+    </svg>
+  </a>
   <ul class="nav-links">
     <li><a href="index.html">الرئيسية</a></li>
     <li><a href="course-details.html">تفاصيل الدروس</a></li>
@@ -557,7 +571,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo"><img src="logo.png" alt="Makeup Ramli" /></a>
+      <a href="index.html" class="nav-logo">ميكاب رملي</a>
       <p>دروس مكياج خاصة واحترافية — لكل امرأة تستحق أن تشعر بجمالها</p>
     </div>
     <div class="footer-col">
