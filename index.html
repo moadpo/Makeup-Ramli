@@ -269,6 +269,52 @@
       .learn-grid { grid-template-columns: 1fr 1fr; }
       .learn-card { min-height: 180px; }
     }
+
+    /* ── SCROLL ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(36px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.93); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes slideRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideLeft {
+      from { opacity: 0; transform: translateX(-40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    [data-reveal] {
+      opacity: 0;
+    }
+    [data-reveal].revealed {
+      animation-fill-mode: both;
+      animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      animation-duration: 0.75s;
+    }
+    [data-reveal="up"].revealed      { animation-name: fadeUp; }
+    [data-reveal="fade"].revealed    { animation-name: fadeIn; }
+    [data-reveal="scale"].revealed   { animation-name: scaleIn; }
+    [data-reveal="right"].revealed   { animation-name: slideRight; }
+    [data-reveal="left"].revealed    { animation-name: slideLeft; }
+
+    [data-delay="1"].revealed { animation-delay: 0.08s; }
+    [data-delay="2"].revealed { animation-delay: 0.18s; }
+    [data-delay="3"].revealed { animation-delay: 0.28s; }
+    [data-delay="4"].revealed { animation-delay: 0.38s; }
+    [data-delay="5"].revealed { animation-delay: 0.48s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] { opacity: 1 !important; animation: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -333,7 +379,7 @@
     <p class="hero-quote">استثمري في نفسك، أنتِ تستحقين</p>
   </div>
 
-  <div class="hero-visual">
+  <div class="hero-visual" data-reveal="right">
     <div class="hero-float-card card-top">
       <i class="fas fa-crown float-icon"></i>
       <div>
@@ -354,13 +400,13 @@
 
 <!-- MAKEUP COURSES GALLERY -->
 <section class="gallery-section">
-  <div class="text-center">
+  <div class="text-center" data-reveal="up">
     <span class="section-tag">معرض الأعمال</span>
     <h2 class="section-title">نتائج <span class="italic">تدريبات ميكاب رملي الأخيرة</span></h2>
     <div class="divider"></div>
     <p class="section-subtitle">أجمل الإطلالات والأعمال التي قمتُ بتنفيذها وإبداعها.</p>
   </div>
-  <div class="gallery-single">
+  <div class="gallery-single" data-reveal="scale">
     <div class="gallery-item-single">
       <img src="red-tekchita.png" alt="Red Tekchita" />
       <div class="gallery-overlay"><span>Red Tekchita</span></div>
@@ -370,7 +416,7 @@
 
 <!-- WHAT YOU'LL LEARN -->
 <section class="learn-section">
-  <div class="text-center">
+  <div class="text-center" data-reveal="up">
     <span class="section-tag">ما ستتعلمينه</span>
     <h2 class="section-title">كل ما تحتاجينه <span class="italic">لإطلالة مثالية</span></h2>
     <div class="divider"></div>
@@ -378,7 +424,7 @@
   </div>
   <div class="learn-grid">
 
-    <div class="learn-card">
+    <div class="learn-card" data-reveal="up" data-delay="1">
       <div class="learn-card-bg" style="background-image:url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&q=95')"></div>
       <div class="learn-card-overlay"></div>
       <div class="learn-card-content">
@@ -388,7 +434,7 @@
       </div>
     </div>
 
-    <div class="learn-card">
+    <div class="learn-card" data-reveal="up" data-delay="2">
       <div class="learn-card-bg" style="background-image:url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=900&q=95')"></div>
       <div class="learn-card-overlay"></div>
       <div class="learn-card-content">
@@ -398,7 +444,7 @@
       </div>
     </div>
 
-    <div class="learn-card">
+    <div class="learn-card" data-reveal="up" data-delay="3">
       <div class="learn-card-bg" style="background-image:url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=900&q=95')"></div>
       <div class="learn-card-overlay"></div>
       <div class="learn-card-content">
@@ -408,7 +454,7 @@
       </div>
     </div>
 
-    <div class="learn-card">
+    <div class="learn-card" data-reveal="up" data-delay="4">
       <div class="learn-card-bg" style="background-image:url('https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=900&q=95')"></div>
       <div class="learn-card-overlay"></div>
       <div class="learn-card-content">
@@ -418,7 +464,7 @@
       </div>
     </div>
 
-    <div class="learn-card">
+    <div class="learn-card" data-reveal="up" data-delay="5">
       <div class="learn-card-bg" style="background-image:url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=900&q=95')"></div>
       <div class="learn-card-overlay"></div>
       <div class="learn-card-content">
@@ -433,7 +479,7 @@
 
 <!-- COURSES / OFFERS -->
 <section class="courses-section">
-  <div class="text-center">
+  <div class="text-center" data-reveal="up">
     <span class="section-tag">العروض المتاحة</span>
     <h2 class="section-title">اختاري <span class="italic">الدرس المناسب</span> لك</h2>
     <div class="divider"></div>
@@ -442,7 +488,7 @@
   <div class="courses-grid">
 
     <!-- Group -->
-    <div class="course-card">
+    <div class="course-card" data-reveal="up" data-delay="1">
       <div class="course-card-img">
         <img src="group-course.jpg" alt="دروس جماعية" />
       </div>
@@ -466,7 +512,7 @@
     </div>
 
     <!-- Private -->
-    <div class="course-card featured">
+    <div class="course-card featured" data-reveal="up" data-delay="2">
       <div class="course-badge-wrap">الأكثر طلباً ✦</div>
       <div class="course-card-img">
         <img src="alone-course.jpg" alt="دروس خاصة" />
@@ -495,13 +541,13 @@
 
 <!-- TESTIMONIALS -->
 <section class="testimonials-section">
-  <div class="text-center">
+  <div class="text-center" data-reveal="up">
     <span class="section-tag">آراء الطالبات</span>
     <h2 class="section-title">ماذا قالت <span class="italic">طالباتنا</span></h2>
     <div class="divider"></div>
   </div>
   <div class="testimonials-grid">
-    <div class="testi-card">
+    <div class="testi-card" data-reveal="up" data-delay="1">
       <div class="testi-quote">"</div>
       <p class="testi-text">ما كنت كنعرف كيف نطبق الفونداسيون مزيان، بعد 3 أيام مع رملي واللا تبدّل! تعلمت تقنيات ما تعلمتها ف أي بلاص.</p>
       <div class="testi-author">
@@ -512,7 +558,7 @@
         </div>
       </div>
     </div>
-    <div class="testi-card">
+    <div class="testi-card" data-reveal="up" data-delay="2">
       <div class="testi-quote">"</div>
       <p class="testi-text">الدرس الجماعي كان تجربة رائعة! الأجواء كانت حلوة والرفيقات كانو مزيانين. رملي تشرح بكل صبر وتعطي وقتها لكل وحدة.</p>
       <div class="testi-author">
@@ -523,7 +569,7 @@
         </div>
       </div>
     </div>
-    <div class="testi-card">
+    <div class="testi-card" data-reveal="up" data-delay="3">
       <div class="testi-quote">"</div>
       <p class="testi-text">خدت درس خاص وكان أحسن قرار! في 3 أيام تعلمت كل شي من الكونتور للسموكي آي. الآن أنا نديري مكياجي بثقة كاملة.</p>
       <div class="testi-author">
@@ -538,7 +584,7 @@
 </section>
 
 <!-- CTA BANNER -->
-<section class="cta-banner">
+<section class="cta-banner" data-reveal="fade">
   <span class="section-tag" style="color:var(--gold);">عرض خاص محدود</span>
   <h2>احجزي مكانك <span class="accent">الآن</span></h2>
   <p>الأماكن محدودة — لا تفوّتي الفرصة</p>
@@ -587,6 +633,18 @@
     </div>
   </div>
 </footer>
+
+<script>
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+</script>
 
 </body>
 </html>
