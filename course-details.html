@@ -1,12 +1,12 @@
-﻿<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تفاصيل الدروس | ميكاب رملي</title>
+  <title>Detalles del curso | Makeup Ramli</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
   <!-- Meta Pixel Code -->
@@ -33,10 +33,10 @@
       --muted: #8A6E65; --gold: #C9A97A;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Tajawal', sans-serif; background: var(--white); color: var(--text); direction: rtl; }
+    body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--text); }
 
     nav {
-      position: fixed; top: 0; right: 0; left: 0; z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: rgba(253,250,247,0.95); backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(176,122,110,0.15);
       padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 72px;
@@ -44,12 +44,11 @@
     .nav-logo { text-decoration: none; display: flex; align-items: center; }
     .nav-logo img { height: 70px; width: auto; object-fit: contain; filter: hue-rotate(-25deg) saturate(1.6); background: #FDFAF7; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.95rem; font-weight: 600; transition: color 0.2s; }
     .nav-links a:hover { color: var(--rose); }
-    .nav-cta { background: var(--rose); color: #fff; border: none; padding: 0.55rem 1.4rem; border-radius: 50px; font-family: 'Tajawal', sans-serif; font-size: 0.9rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: background 0.2s; }
+    .nav-cta { background: var(--rose); color: #fff; border: none; padding: 0.55rem 1.4rem; border-radius: 50px; font-family: 'Poppins', sans-serif; font-size: 0.9rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: background 0.2s; }
     .nav-cta:hover { background: var(--brown); }
 
-    /* PAGE HERO */
     .page-hero {
       padding: 120px 5% 70px;
       background: linear-gradient(135deg, var(--cream) 0%, var(--blush) 100%);
@@ -62,15 +61,13 @@
     .page-hero h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 1rem; }
     .page-hero h1 .italic { font-family: 'Playfair Display', serif; font-style: italic; color: var(--rose); }
     .page-hero p { font-size: 1rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.8rem; max-width: 480px; }
-    .hero-meta { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .hero-meta { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem; justify-content: center; }
     .meta-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text); font-weight: 600; }
     .meta-item i { color: var(--rose); }
     .btn-primary { background: var(--rose); color: #fff; padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
     .btn-primary:hover { background: var(--brown); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(176,122,110,0.35); }
     .hero-img { display: none; }
-    .hero-img img { width: 100%; height: 460px; object-fit: cover; display: block; }
 
-    /* SECTION BASE */
     section { padding: 80px 5%; }
     .section-tag { text-transform: uppercase; letter-spacing: 3px; font-size: 0.72rem; color: var(--rose); font-weight: 700; margin-bottom: 0.5rem; display: block; }
     .section-title { font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 800; color: var(--dark); margin-bottom: 0.8rem; line-height: 1.25; }
@@ -79,9 +76,8 @@
     .divider { width: 60px; height: 3px; background: linear-gradient(90deg, var(--rose), var(--gold)); border-radius: 2px; margin: 0.8rem auto 1.5rem; }
     .section-sub { font-size: 1rem; color: var(--muted); line-height: 1.7; max-width: 560px; margin: 0 auto; }
 
-    /* CURRICULUM */
     .curriculum-section { background: var(--white); }
-    .curriculum-inner { display: grid; grid-template-columns: 1.4fr 1fr; gap: 4rem; align-items: start; max-width: 1100px; margin: 0 auto; }
+    .curriculum-inner { max-width: 750px; margin: 0 auto; }
     .modules { margin-top: 2rem; }
     .module {
       border: 1px solid rgba(176,122,110,0.15); border-radius: 16px;
@@ -114,32 +110,6 @@
     .lesson-list li:last-child { border-bottom: none; }
     .lesson-list li i { color: var(--rose); font-size: 0.75rem; flex-shrink: 0; }
 
-    /* STICKY PRICING CARD */
-    .pricing-card {
-      background: var(--white); border-radius: 24px;
-      box-shadow: 0 8px 40px rgba(62,42,36,0.12);
-      border: 2px solid rgba(176,122,110,0.15);
-      position: sticky; top: 90px; overflow: hidden;
-    }
-    .pricing-card-header {
-      background: linear-gradient(135deg, var(--brown), var(--dark));
-      padding: 1.8rem; text-align: center;
-    }
-    .pricing-card-header .label { font-size: 0.75rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.4rem; }
-    .pricing-card-header .price-row { display: flex; align-items: baseline; justify-content: center; gap: 0.6rem; }
-    .pricing-card-header .new-p { font-size: 2.4rem; font-weight: 800; color: var(--gold); }
-    .pricing-card-header .old-p { text-decoration: line-through; color: rgba(255,255,255,0.45); font-size: 1.1rem; }
-    .pricing-card-header .save-badge { background: rgba(201,169,122,0.2); border: 1px solid rgba(201,169,122,0.4); color: var(--gold); font-size: 0.72rem; padding: 0.2rem 0.6rem; border-radius: 20px; margin-top: 0.4rem; display: inline-block; }
-    .pricing-card-body { padding: 1.5rem 1.8rem; }
-    .pricing-includes { list-style: none; margin-bottom: 1.5rem; }
-    .pricing-includes li { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.88rem; color: var(--text); padding: 0.5rem 0; border-bottom: 1px solid rgba(176,122,110,0.08); }
-    .pricing-includes li:last-child { border-bottom: none; }
-    .pricing-includes li i { color: var(--rose); margin-top: 2px; flex-shrink: 0; }
-    .btn-enroll-full { display: block; width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--rose), var(--mauve)); color: #fff; border-radius: 14px; font-family: 'Tajawal', sans-serif; font-size: 1rem; font-weight: 800; text-align: center; text-decoration: none; transition: opacity 0.2s, transform 0.15s; }
-    .btn-enroll-full:hover { opacity: 0.9; transform: translateY(-2px); }
-    .pricing-note { text-align: center; font-size: 0.75rem; color: var(--muted); margin-top: 0.8rem; display: flex; align-items: center; justify-content: center; gap: 0.4rem; }
-
-    /* INSTRUCTOR */
     .instructor-section { background: var(--cream); }
     .instructor-inner { display: flex; flex-direction: column; gap: 2rem; align-items: center; max-width: 720px; margin: 0 auto; text-align: center; }
     .instructor-img { border-radius: 20px; overflow: hidden; box-shadow: 0 12px 40px rgba(62,42,36,0.15); width: 100%; }
@@ -148,36 +118,6 @@
     .instructor-text .role { color: var(--rose); font-weight: 600; font-size: 0.9rem; margin-bottom: 1rem; }
     .instructor-text p { color: var(--muted); line-height: 1.8; font-size: 0.92rem; }
 
-    /* OFFERS COMPARE */
-    .compare-section { background: var(--white); }
-    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 800px; margin: 2.5rem auto 0; }
-    .compare-card {
-      border: 2px solid rgba(176,122,110,0.2); border-radius: 24px;
-      overflow: hidden; transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .compare-card:hover { border-color: var(--rose); box-shadow: 0 12px 40px rgba(176,122,110,0.15); }
-    .compare-card.featured { border-color: var(--rose); }
-    .compare-header { background: var(--cream); padding: 1.5rem; text-align: center; }
-    .compare-header.dark-bg { background: linear-gradient(135deg, var(--rose), var(--mauve)); }
-    .compare-header.dark-bg .ch-title, .compare-header.dark-bg .ch-price { color: #fff; }
-    .compare-header.dark-bg .ch-sub { color: rgba(255,255,255,0.75); }
-    .ch-icon { font-size: 1.8rem; color: var(--rose); margin-bottom: 0.5rem; }
-    .compare-header.dark-bg .ch-icon { color: rgba(255,255,255,0.9); }
-    .ch-title { font-size: 1.1rem; font-weight: 800; color: var(--dark); margin-bottom: 0.3rem; }
-    .ch-price { font-size: 1.8rem; font-weight: 800; color: var(--rose); }
-    .ch-sub { font-size: 0.78rem; color: var(--muted); }
-    .compare-body { padding: 1.5rem; }
-    .compare-body ul { list-style: none; }
-    .compare-body ul li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; color: var(--text); margin-bottom: 0.6rem; }
-    .compare-body ul li i { color: var(--rose); margin-top: 3px; flex-shrink: 0; }
-    .compare-footer { padding: 0 1.5rem 1.5rem; }
-    .btn-compare { display: block; width: 100%; padding: 0.8rem; border-radius: 50px; font-family: 'Tajawal', sans-serif; font-size: 0.92rem; font-weight: 700; text-align: center; text-decoration: none; transition: all 0.2s; }
-    .btn-compare.outline { border: 2px solid var(--rose); color: var(--rose); }
-    .btn-compare.outline:hover { background: var(--rose); color: #fff; }
-    .btn-compare.filled { background: var(--rose); color: #fff; }
-    .btn-compare.filled:hover { background: var(--brown); }
-
-    /* CTA */
     .cta-section { background: linear-gradient(135deg, var(--dark), #5C3D35); color: #fff; padding: 80px 5%; text-align: center; }
     .cta-section h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; margin-bottom: 0.5rem; }
     .cta-section h2 .gold { color: var(--gold); font-family: 'Playfair Display', serif; font-style: italic; }
@@ -193,11 +133,7 @@
 
     @media (max-width: 900px) {
       .page-hero { grid-template-columns: 1fr; }
-      .hero-img { display: none; }
-      .curriculum-inner { grid-template-columns: 1fr; }
-      .pricing-card { position: static; }
       .instructor-inner { grid-template-columns: 1fr; }
-      .compare-grid { grid-template-columns: 1fr; max-width: 420px; }
     }
     @media (max-width: 600px) {
       .nav-logo img { height: 54px; }
@@ -213,206 +149,145 @@
 <nav>
   <a href="index.html" class="nav-logo"><img src="logo.png" alt="Makeup Ramli" /></a>
   <ul class="nav-links">
-    <li><a href="index.html">الرئيسية</a></li>
-    <li><a href="course-details.html">تفاصيل الدروس</a></li>
-    <li><a href="contact.html">تواصلي معنا</a></li>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="course-details.html">Detalles del curso</a></li>
+    <li><a href="contact.html">Contacto</a></li>
   </ul>
-  <a href="signin.html" class="nav-cta">سجلي الآن</a>
+  <a href="signin.html" class="nav-cta">Inscribirme</a>
 </nav>
 
-<!-- PAGE HERO -->
 <div class="page-hero">
   <div>
-    <span class="hero-tag">دروس مكياج احترافية</span>
-    <h1>اكتشفي عالم <span class="italic">المكياج الاحترافي</span></h1>
-    <p>دروس شاملة تبدأ معكِ من الصفر وتأخذكِ إلى مستوى الاحتراف — بأسلوب عملي ومبسّط مع خبيرة رملي.</p>
+    <span class="hero-tag">Cursos de maquillaje profesional</span>
+    <h1>Descubre el mundo del <span class="italic">maquillaje profesional</span></h1>
+    <p>Cursos completos que te llevan desde cero hasta nivel profesional &mdash; con un m&eacute;todo pr&aacute;ctico y sencillo con la experta Ramli.</p>
     <div class="hero-meta">
-      <div class="meta-item"><i class="fas fa-clock"></i> 7+ ساعات تدريب</div>
-      <div class="meta-item"><i class="fas fa-star"></i> 4.9 تقييم</div>
-      <div class="meta-item"><i class="fas fa-users"></i> 500+ طالبة</div>
+      <div class="meta-item"><i class="fas fa-clock"></i> 7+ horas de pr&aacute;ctica</div>
+      <div class="meta-item"><i class="fas fa-star"></i> 4.9 valoraci&oacute;n</div>
+      <div class="meta-item"><i class="fas fa-users"></i> 500+ alumnas</div>
     </div>
-    <a href="signin.html" class="btn-primary"><i class="fas fa-arrow-left"></i> سجلي الآن</a>
-  </div>
-  <div class="hero-img">
-    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80" alt="دروس مكياج" />
+    <a href="signin.html" class="btn-primary"><i class="fas fa-arrow-right"></i> Inscr&iacute;bete ahora</a>
   </div>
 </div>
 
-<!-- CURRICULUM + PRICING -->
 <section class="curriculum-section">
   <div class="curriculum-inner">
-    <div>
-      <span class="section-tag">المنهج الدراسي</span>
-      <h2 class="section-title">ماذا <span class="italic">ستتعلمين؟</span></h2>
-      <p style="color:var(--muted);font-size:0.92rem;line-height:1.75;margin-bottom:1.5rem;">منهج متكامل مصمم لمساعدتك على إتقان فن المكياج من الأساسيات حتى التقنيات الاحترافية.</p>
-      <div class="modules">
-        <div class="module open">
-          <div class="module-header" onclick="toggleModule(this)">
-            <div class="module-header-right">
-              <div class="module-num">1</div>
-              <div class="module-title">أساسيات العناية بالبشرة قبل المكياج</div>
-            </div>
-            <i class="fas fa-chevron-down module-toggle"></i>
+    <span class="section-tag">Programa del curso</span>
+    <h2 class="section-title">&iquest;Qu&eacute; <span class="italic">aprender&aacute;s?</span></h2>
+    <p style="color:var(--muted);font-size:0.92rem;line-height:1.75;margin-bottom:1.5rem;">Un programa completo dise&ntilde;ado para ayudarte a dominar el arte del maquillaje desde lo b&aacute;sico hasta las t&eacute;cnicas profesionales.</p>
+    <div class="modules">
+      <div class="module open">
+        <div class="module-header" onclick="toggleModule(this)">
+          <div class="module-header-right">
+            <div class="module-num">1</div>
+            <div class="module-title">Cuidado de la piel antes del maquillaje</div>
           </div>
-          <div class="module-body">
-            <ul class="lesson-list">
-              <li><i class="fas fa-circle"></i> تحديد نوع بشرتك</li>
-              <li><i class="fas fa-circle"></i> تحضير البشرة لأفضل تطبيق</li>
-              <li><i class="fas fa-circle"></i> اختيار الـ Primer المناسب</li>
-              <li><i class="fas fa-circle"></i> أسرار الترطيب والتثبيت</li>
-            </ul>
-          </div>
+          <i class="fas fa-chevron-down module-toggle"></i>
         </div>
-        <div class="module">
-          <div class="module-header" onclick="toggleModule(this)">
-            <div class="module-header-right">
-              <div class="module-num">2</div>
-              <div class="module-title">البشرة المثالية — Foundation & Concealer</div>
-            </div>
-            <i class="fas fa-chevron-down module-toggle"></i>
-          </div>
-          <div class="module-body">
-            <ul class="lesson-list">
-              <li><i class="fas fa-circle"></i> اختيار الدرجة المناسبة لك</li>
-              <li><i class="fas fa-circle"></i> تقنيات التطبيق بالإسفنجة والفرشاة</li>
-              <li><i class="fas fa-circle"></i> إخفاء الهالات والعيوب</li>
-              <li><i class="fas fa-circle"></i> الكونتور والهايلايت الطبيعي</li>
-            </ul>
-          </div>
+        <div class="module-body">
+          <ul class="lesson-list">
+            <li><i class="fas fa-circle"></i> Identificar tu tipo de piel</li>
+            <li><i class="fas fa-circle"></i> Preparar la piel para la mejor aplicaci&oacute;n</li>
+            <li><i class="fas fa-circle"></i> Elegir el Primer adecuado</li>
+            <li><i class="fas fa-circle"></i> Secretos de hidrataci&oacute;n y fijaci&oacute;n</li>
+          </ul>
         </div>
-        <div class="module">
-          <div class="module-header" onclick="toggleModule(this)">
-            <div class="module-header-right">
-              <div class="module-num">3</div>
-              <div class="module-title">فن العيون — Eye Makeup</div>
-            </div>
-            <i class="fas fa-chevron-down module-toggle"></i>
+      </div>
+      <div class="module">
+        <div class="module-header" onclick="toggleModule(this)">
+          <div class="module-header-right">
+            <div class="module-num">2</div>
+            <div class="module-title">Piel perfecta &mdash; Foundation &amp; Concealer</div>
           </div>
-          <div class="module-body">
-            <ul class="lesson-list">
-              <li><i class="fas fa-circle"></i> تشكيل الحاجب باحترافية</li>
-              <li><i class="fas fa-circle"></i> تقنية الـ Smoky Eye</li>
-              <li><i class="fas fa-circle"></i> الأيلاينر لكل أشكال العيون</li>
-              <li><i class="fas fa-circle"></i> الرموش الاصطناعية وتثبيتها</li>
-            </ul>
-          </div>
+          <i class="fas fa-chevron-down module-toggle"></i>
         </div>
-        <div class="module">
-          <div class="module-header" onclick="toggleModule(this)">
-            <div class="module-header-right">
-              <div class="module-num">4</div>
-              <div class="module-title">الشفاه والبلاشر</div>
-            </div>
-            <i class="fas fa-chevron-down module-toggle"></i>
-          </div>
-          <div class="module-body">
-            <ul class="lesson-list">
-              <li><i class="fas fa-circle"></i> تعريف الشفاه وتكبيرها بصرياً</li>
-              <li><i class="fas fa-circle"></i> درجات أحمر الشفاه لكل مناسبة</li>
-              <li><i class="fas fa-circle"></i> البلاشر الطبيعي مقابل الـ Contouring</li>
-              <li><i class="fas fa-circle"></i> تثبيت المكياج طوال اليوم</li>
-            </ul>
-          </div>
+        <div class="module-body">
+          <ul class="lesson-list">
+            <li><i class="fas fa-circle"></i> Elegir el tono adecuado para ti</li>
+            <li><i class="fas fa-circle"></i> T&eacute;cnicas de aplicaci&oacute;n con esponja y brocha</li>
+            <li><i class="fas fa-circle"></i> Ocultar ojeras e imperfecciones</li>
+            <li><i class="fas fa-circle"></i> Contorno e iluminador natural</li>
+          </ul>
         </div>
-        <div class="module">
-          <div class="module-header" onclick="toggleModule(this)">
-            <div class="module-header-right">
-              <div class="module-num">5</div>
-              <div class="module-title">إطلالات كاملة من الصفر حتى الاكتمال</div>
-            </div>
-            <i class="fas fa-chevron-down module-toggle"></i>
+      </div>
+      <div class="module">
+        <div class="module-header" onclick="toggleModule(this)">
+          <div class="module-header-right">
+            <div class="module-num">3</div>
+            <div class="module-title">El arte de los ojos &mdash; Eye Makeup</div>
           </div>
-          <div class="module-body">
-            <ul class="lesson-list">
-              <li><i class="fas fa-circle"></i> إطلالة يومية طبيعية</li>
-              <li><i class="fas fa-circle"></i> مكياج السهرات والمناسبات</li>
-              <li><i class="fas fa-circle"></i> مكياج التصوير والكاميرا</li>
-              <li><i class="fas fa-circle"></i> تمرين عملي مباشر مع رملي</li>
-            </ul>
+          <i class="fas fa-chevron-down module-toggle"></i>
+        </div>
+        <div class="module-body">
+          <ul class="lesson-list">
+            <li><i class="fas fa-circle"></i> Dise&ntilde;o de cejas profesional</li>
+            <li><i class="fas fa-circle"></i> T&eacute;cnica Smoky Eye</li>
+            <li><i class="fas fa-circle"></i> Eyeliner para cada forma de ojo</li>
+            <li><i class="fas fa-circle"></i> Pesta&ntilde;as postizas y su colocaci&oacute;n</li>
+          </ul>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-header" onclick="toggleModule(this)">
+          <div class="module-header-right">
+            <div class="module-num">4</div>
+            <div class="module-title">Labios y colorete</div>
           </div>
+          <i class="fas fa-chevron-down module-toggle"></i>
+        </div>
+        <div class="module-body">
+          <ul class="lesson-list">
+            <li><i class="fas fa-circle"></i> Definir y dar volumen a los labios</li>
+            <li><i class="fas fa-circle"></i> Tonos de labial para cada ocasi&oacute;n</li>
+            <li><i class="fas fa-circle"></i> Colorete natural vs. Contouring</li>
+            <li><i class="fas fa-circle"></i> Fijar el maquillaje todo el d&iacute;a</li>
+          </ul>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-header" onclick="toggleModule(this)">
+          <div class="module-header-right">
+            <div class="module-num">5</div>
+            <div class="module-title">Looks completos de principio a fin</div>
+          </div>
+          <i class="fas fa-chevron-down module-toggle"></i>
+        </div>
+        <div class="module-body">
+          <ul class="lesson-list">
+            <li><i class="fas fa-circle"></i> Look diario natural</li>
+            <li><i class="fas fa-circle"></i> Maquillaje de noche y eventos</li>
+            <li><i class="fas fa-circle"></i> Maquillaje para fotograf&iacute;a y c&aacute;mara</li>
+            <li><i class="fas fa-circle"></i> Pr&aacute;ctica en directo con Ramli</li>
+          </ul>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- INSTRUCTOR -->
 <section class="instructor-section">
   <div class="instructor-inner">
     <div class="instructor-img">
-      <img src="Makeuple.JPG" alt="رملي" loading="lazy" />
+      <img src="Makeuple.JPG" alt="Ramli" loading="lazy" />
     </div>
     <div class="instructor-text">
-      <span class="section-tag">مدرّبتك</span>
-      <h3>رملي</h3>
-      <div class="role">خبيرة مكياج معتمدة دولياً · مؤسسة ميكاب رملي</div>
-      <p>درّبت رملي أكثر من 500 طالبة على مدى عشر سنوات، وعملت مع أبرز الأسماء في عالم الجمال والأزياء. أسلوبها في التدريس يعتمد على الفهم العميق وليس فقط التطبيق — لأنها تؤمن أن كل وجه جميل بطريقته الخاصة، ودورها هو مساعدتكِ على إيجاد ذلك الجمال.</p>
+      <span class="section-tag">Tu formadora</span>
+      <h3>Ramli</h3>
+      <div class="role">Experta en maquillaje certificada internacionalmente &middot; Fundadora de Makeup Ramli</div>
+      <p>Ramli ha formado a m&aacute;s de 500 alumnas durante diez a&ntilde;os y ha trabajado con los nombres m&aacute;s destacados del mundo de la belleza y la moda. Su m&eacute;todo de ense&ntilde;anza se basa en la comprensi&oacute;n profunda, no solo en la aplicaci&oacute;n &mdash; porque cree que cada rostro es bello a su manera, y su misi&oacute;n es ayudarte a descubrir esa belleza.</p>
     </div>
   </div>
 </section>
 
-<!-- COMPARE OFFERS -->
-<section class="compare-section">
-  <div class="text-center">
-    <span class="section-tag">اختاري الأنسب لكِ</span>
-    <h2 class="section-title">الدروس <span class="italic">الجماعية والخاصة</span></h2>
-    <div class="divider"></div>
-  </div>
-  <div class="compare-grid">
-    <div class="compare-card">
-      <div class="compare-header">
-        <div class="ch-icon"><i class="fas fa-users"></i></div>
-        <div class="ch-title">دروس جماعية</div>
-        <div class="ch-price">2500 د.م</div>
-        <div class="ch-sub">للدورة كاملة</div>
-      </div>
-      <div class="compare-body">
-        <ul>
-          <li><i class="fas fa-check"></i> مجموعات من 4–6 طالبات</li>
-          <li><i class="fas fa-check"></i> جو تعليمي اجتماعي ممتع</li>
-          <li><i class="fas fa-check"></i> جلسات أسبوعية منتظمة</li>
-          <li><i class="fas fa-check"></i> تبادل خبرات مع الزميلات</li>
-          <li><i class="fas fa-check"></i> وصول لمحتوى الدورة</li>
-        </ul>
-      </div>
-      <div class="compare-footer">
-        <a href="signin.html?type=group" class="btn-compare outline">اختاري هذا العرض</a>
-      </div>
-    </div>
-    <div class="compare-card featured">
-      <div class="compare-header dark-bg">
-        <div class="ch-icon"><i class="fas fa-user"></i></div>
-        <div class="ch-title">درس خاص</div>
-        <div class="ch-price">4000 د.م</div>
-        <div class="ch-sub">للدرس الواحد</div>
-      </div>
-      <div class="compare-body">
-        <ul>
-          <li><i class="fas fa-check"></i> اهتمام كامل ومخصص لكِ</li>
-          <li><i class="fas fa-check"></i> برنامج حسب احتياجاتك</li>
-          <li><i class="fas fa-check"></i> مرونة تامة في الجدول</li>
-          <li><i class="fas fa-check"></i> متابعة شخصية بعد الدرس</li>
-          <li><i class="fas fa-check"></i> نتائج أسرع وأعمق</li>
-        </ul>
-      </div>
-      <div class="compare-footer">
-        <a href="signin.html?type=private" class="btn-compare filled">الأكثر طلباً — سجلي</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
 <section class="cta-section">
-  <span class="section-tag" style="color:var(--gold);">لا تتأخري</span>
-  <h2>الأماكن <span class="gold">محدودة</span></h2>
-  <p>احجزي مكانك الآن قبل أن تمتلئ المجموعة — عرض خاص لفترة محدودة</p>
-  <a href="signin.html" class="btn-gold"><i class="fas fa-arrow-left"></i> سجلي الآن</a>
+  <span class="section-tag" style="color:var(--gold);">No esperes m&aacute;s</span>
+  <h2>Las plazas son <span class="gold">limitadas</span></h2>
+  <p>Reserva tu plaza ahora antes de que se complete el grupo &mdash; oferta especial por tiempo limitado</p>
+  <a href="signin.html" class="btn-gold"><i class="fas fa-arrow-right"></i> Inscr&iacute;bete ahora</a>
 </section>
 
 <footer>
-  <span>© 2025 <a href="index.html">ميكاب رملي</a> · جميع الحقوق محفوظة</span>
+  <span>&copy; 2025 <a href="index.html">Makeup Ramli</a> &middot; Todos los derechos reservados</span>
   <div class="social-links">
     <a href="https://instagram.com/maisonramli" target="_blank"><i class="fab fa-instagram"></i></a>
     <a href="https://tiktok.com/@maisonramli" target="_blank"><i class="fab fa-tiktok"></i></a>
@@ -421,18 +296,12 @@
 
 <script>
   function toggleModule(header) {
-    const module = header.closest('.module');
+    const module = header.parentElement;
+    document.querySelectorAll('.module').forEach(m => {
+      if (m !== module) m.classList.remove('open');
+    });
     module.classList.toggle('open');
   }
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-

@@ -1,12 +1,12 @@
-﻿<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>التسجيل | ميكاب رملي</title>
+  <title>Inscripción | Makeup Ramli</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
   <!-- Meta Pixel Code -->
@@ -34,12 +34,12 @@
       --muted: #8A6E65; --gold: #C9A97A;
     }
     body {
-      font-family: 'Tajawal', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, var(--cream) 0%, var(--blush) 50%, #E8CEBF 100%);
-      min-height: 100vh; color: var(--text); direction: rtl;
+      min-height: 100vh; color: var(--text);
     }
     nav {
-      position: fixed; top: 0; right: 0; left: 0; z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: rgba(253,250,247,0.95); backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(176,122,110,0.15);
       padding: 0 2rem; display: flex; align-items: center; justify-content: space-between;
@@ -48,7 +48,7 @@
     .nav-logo { text-decoration: none; display: flex; align-items: center; }
     .nav-logo img { height: 70px; width: auto; object-fit: contain; filter: hue-rotate(-25deg) saturate(1.6); background: #FDFAF7; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.95rem; font-weight: 600; transition: color 0.2s; }
     .nav-links a:hover { color: var(--rose); }
 
     .page-wrapper {
@@ -64,7 +64,6 @@
       overflow: hidden;
     }
 
-    /* LEFT PANEL (image + info) */
     .signin-panel-left {
       background: linear-gradient(160deg, var(--brown) 0%, var(--dark) 100%);
       padding: 3rem 2.5rem;
@@ -110,7 +109,6 @@
     }
     .panel-img img { width: 100%; height: 200px; object-fit: cover; display: block; }
 
-    /* RIGHT PANEL (form) */
     .signin-panel-right { padding: 3rem 2.5rem; }
     .form-header { margin-bottom: 2rem; }
     .form-header .tag {
@@ -129,13 +127,13 @@
     .input-wrap { position: relative; }
     .input-icon {
       position: absolute; top: 50%; transform: translateY(-50%);
-      right: 14px; color: var(--muted); font-size: 0.95rem; pointer-events: none;
+      left: 14px; color: var(--muted); font-size: 0.95rem; pointer-events: none;
     }
     .form-group input,
     .form-group select {
-      width: 100%; padding: 0.8rem 2.6rem 0.8rem 1rem;
+      width: 100%; padding: 0.8rem 1rem 0.8rem 2.6rem;
       border: 1.5px solid rgba(176,122,110,0.25);
-      border-radius: 12px; font-family: 'Tajawal', sans-serif;
+      border-radius: 12px; font-family: 'Poppins', sans-serif;
       font-size: 0.95rem; color: var(--text);
       background: var(--white); transition: border-color 0.2s, box-shadow 0.2s;
       outline: none; appearance: none;
@@ -147,27 +145,11 @@
     }
     .form-group input::placeholder { color: #C4A99E; }
 
-    .course-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem; }
-    .course-option { display: none; }
-    .course-option-label {
-      display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
-      padding: 1rem; border: 2px solid rgba(176,122,110,0.2);
-      border-radius: 14px; cursor: pointer; text-align: center;
-      transition: all 0.2s; background: var(--white);
-    }
-    .course-option-label:hover { border-color: var(--rose); background: rgba(176,122,110,0.04); }
-    .course-option:checked + .course-option-label {
-      border-color: var(--rose); background: rgba(176,122,110,0.08);
-    }
-    .course-option-label .opt-icon { font-size: 1.4rem; color: var(--rose); }
-    .course-option-label .opt-title { font-size: 0.88rem; font-weight: 700; color: var(--dark); }
-    .course-option-label .opt-price { font-size: 0.78rem; color: var(--muted); }
-
     .submit-btn {
       width: 100%; padding: 1rem;
       background: linear-gradient(135deg, var(--rose), var(--mauve));
       color: #fff; border: none; border-radius: 14px;
-      font-family: 'Tajawal', sans-serif; font-size: 1rem; font-weight: 800;
+      font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 800;
       cursor: pointer; transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
       display: flex; align-items: center; justify-content: center; gap: 0.6rem;
       margin-top: 1.5rem;
@@ -194,93 +176,72 @@
 <nav>
   <a href="index.html" class="nav-logo"><img src="logo.png" alt="Makeup Ramli" /></a>
   <ul class="nav-links">
-    <li><a href="index.html">الرئيسية</a></li>
-    <li><a href="course-details.html">تفاصيل الدروس</a></li>
-    <li><a href="contact.html">تواصلي معنا</a></li>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="course-details.html">Detalles del curso</a></li>
+    <li><a href="contact.html">Contacto</a></li>
   </ul>
 </nav>
 
 <div class="page-wrapper">
   <div class="signin-container">
 
-    <!-- LEFT INFO PANEL -->
     <div class="signin-panel-left">
-      <a href="index.html" class="panel-logo">ميكاب رملي</a>
+      <a href="index.html" class="panel-logo">Makeup Ramli</a>
       <div class="panel-content">
-        <h2>انضمي إلى<br/><span class="accent">دروس المكياج</span></h2>
-        <p>سجّلي الآن وابدئي رحلتك نحو الاحتراف في فن المكياج مع خبيرة رملي</p>
+        <h2>&Uacute;nete al<br/><span class="accent">curso de maquillaje</span></h2>
+        <p>Inscr&iacute;bete ahora y comienza tu camino hacia el maquillaje profesional con la experta Ramli</p>
         <ul class="panel-perks">
-          <li><i class="fas fa-check-circle"></i> وصول فوري بعد التسجيل</li>
-          <li><i class="fas fa-check-circle"></i> دروس خاصة أو جماعية</li>
-          <li><i class="fas fa-check-circle"></i> مرونة كاملة في المواعيد</li>
-          <li><i class="fas fa-check-circle"></i> متابعة شخصية مع المدرّبة</li>
-          <li><i class="fas fa-check-circle"></i> ضمان الرضا الكامل</li>
+          <li><i class="fas fa-check-circle"></i> Acceso inmediato tras la inscripci&oacute;n</li>
+          <li><i class="fas fa-check-circle"></i> Curso en grupo reducido</li>
+          <li><i class="fas fa-check-circle"></i> Flexibilidad total de horarios</li>
+          <li><i class="fas fa-check-circle"></i> Seguimiento personal con la formadora</li>
+          <li><i class="fas fa-check-circle"></i> Satisfacci&oacute;n garantizada</li>
         </ul>
       </div>
       <div class="panel-img">
-        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1000&q=95" alt="مكياج احترافي" />
+        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1000&q=95" alt="Maquillaje profesional" />
       </div>
     </div>
 
-    <!-- RIGHT FORM PANEL -->
     <div class="signin-panel-right">
       <div class="form-header">
-        <span class="tag">التسجيل في الدروس</span>
-        <h1>أهلاً بكِ ✦</h1>
-        <p>أكملي البيانات التالية وسنتواصل معك خلال 24 ساعة لتأكيد حجزك</p>
+        <span class="tag">Inscripci&oacute;n al curso</span>
+        <h1>Bienvenida &#10022;</h1>
+        <p>Completa los datos y nos pondremos en contacto contigo en 24 horas para confirmar tu reserva</p>
       </div>
 
       <form id="enrollForm">
-
-        <!-- Custom subject line in your email inbox -->
-        <input type="hidden" name="_subject" value="تسجيل جديد — ميكاب رملي 💄" />
+        <input type="hidden" name="_subject" value="Nueva inscripción — Makeup Ramli 💄" />
+        <input type="hidden" name="Curso" value="Curso en grupo — 700 €" />
 
         <div class="form-group">
-          <label>الاسم الكامل <span>*</span></label>
+          <label>Nombre completo <span>*</span></label>
           <div class="input-wrap">
             <i class="fas fa-user input-icon"></i>
-            <input type="text" name="الاسم الكامل" placeholder="أدخلي اسمك الكامل" required />
+            <input type="text" name="Nombre completo" placeholder="Introduce tu nombre completo" required />
           </div>
         </div>
 
         <div class="form-group">
-          <label>المدينة <span>*</span></label>
+          <label>Ciudad <span>*</span></label>
           <div class="input-wrap">
             <i class="fas fa-map-marker-alt input-icon"></i>
-            <input type="text" name="المدينة" placeholder="مثال: الدار البيضاء، مراكش، فاس..." required />
+            <input type="text" name="Ciudad" placeholder="Ej: Madrid, Barcelona, Valencia..." required />
           </div>
         </div>
 
         <div class="form-group">
-          <label>رقم الهاتف (واتساب) <span>*</span></label>
+          <label>Tel&eacute;fono (WhatsApp) <span>*</span></label>
           <div class="input-wrap">
             <i class="fas fa-phone input-icon"></i>
-            <input type="tel" name="رقم الهاتف" placeholder="+212 6XX XXX XXX" required />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>اختاري نوع الدرس <span>*</span></label>
-          <div class="course-options">
-            <input type="radio" name="نوع الدرس" id="group" value="دروس جماعية — 2500 د.م" class="course-option" />
-            <label for="group" class="course-option-label">
-              <span class="opt-icon"><i class="fas fa-users"></i></span>
-              <span class="opt-title">دروس جماعية</span>
-              <span class="opt-price">2500 د.م</span>
-            </label>
-            <input type="radio" name="نوع الدرس" id="private" value="درس خاص — 4000 د.م" class="course-option" checked />
-            <label for="private" class="course-option-label">
-              <span class="opt-icon"><i class="fas fa-user"></i></span>
-              <span class="opt-title">درس خاص</span>
-              <span class="opt-price">4000 د.م</span>
-            </label>
+            <input type="tel" name="Teléfono" placeholder="+34 6XX XXX XXX" required />
           </div>
         </div>
 
         <button type="submit" class="submit-btn" id="submitBtn">
-          <i class="fas fa-arrow-left"></i> أكملي التسجيل الآن
+          <i class="fas fa-arrow-right"></i> Completar inscripci&oacute;n
         </button>
-        <p class="form-note"><i class="fas fa-lock"></i> بياناتك محمية وآمنة تماماً</p>
+        <p class="form-note"><i class="fas fa-lock"></i> Tus datos est&aacute;n protegidos y seguros</p>
 
       </form>
     </div>
@@ -289,17 +250,10 @@
 </div>
 
 <script>
-  // Pre-select course type from URL param
-  const params = new URLSearchParams(window.location.search);
-  const type = params.get('type');
-  if (type === 'group') document.getElementById('group').checked = true;
-  else document.getElementById('private').checked = true;
-
-  // Submit via AJAX so WE control the redirect (not Formspree)
   document.getElementById('enrollForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
     btn.disabled = true;
 
     const data = new FormData(this);
@@ -313,23 +267,14 @@
       if (res.ok) {
         window.location.href = 'thankyou.html';
       } else {
-        btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> حدث خطأ، حاولي مجدداً';
+        btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error, inténtalo de nuevo';
         btn.disabled = false;
       }
     } catch {
-      btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> حدث خطأ، حاولي مجدداً';
+      btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error, inténtalo de nuevo';
       btn.disabled = false;
     }
   });
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-

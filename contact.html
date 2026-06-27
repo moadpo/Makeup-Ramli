@@ -1,12 +1,12 @@
-﻿<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تواصلي معنا | ميكاب رملي</title>
+  <title>Contacto | Makeup Ramli</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
   <!-- Meta Pixel Code -->
@@ -33,10 +33,10 @@
       --muted: #8A6E65; --gold: #C9A97A;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Tajawal', sans-serif; background: var(--white); color: var(--text); direction: rtl; }
+    body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--text); }
 
     nav {
-      position: fixed; top: 0; right: 0; left: 0; z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: rgba(253,250,247,0.95); backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(176,122,110,0.15);
       padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 72px;
@@ -44,12 +44,11 @@
     .nav-logo { text-decoration: none; display: flex; align-items: center; }
     .nav-logo img { height: 70px; width: auto; object-fit: contain; filter: hue-rotate(-25deg) saturate(1.6); background: #FDFAF7; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.95rem; font-weight: 600; transition: color 0.2s; }
     .nav-links a:hover { color: var(--rose); }
-    .nav-cta { background: var(--rose); color: #fff; padding: 0.55rem 1.4rem; border-radius: 50px; font-family: 'Tajawal', sans-serif; font-size: 0.9rem; font-weight: 700; text-decoration: none; transition: background 0.2s; }
+    .nav-cta { background: var(--rose); color: #fff; padding: 0.55rem 1.4rem; border-radius: 50px; font-family: 'Poppins', sans-serif; font-size: 0.9rem; font-weight: 700; text-decoration: none; transition: background 0.2s; }
     .nav-cta:hover { background: var(--brown); }
 
-    /* PAGE HERO */
     .page-hero {
       padding: 120px 5% 70px;
       background: linear-gradient(135deg, var(--cream) 0%, var(--blush) 100%);
@@ -61,11 +60,9 @@
     .page-hero p { font-size: 1rem; color: var(--muted); line-height: 1.75; max-width: 520px; margin: 0 auto; }
     .divider { width: 60px; height: 3px; background: linear-gradient(90deg, var(--rose), var(--gold)); border-radius: 2px; margin: 1rem auto; }
 
-    /* CONTACT SECTION */
     .contact-section { padding: 80px 5%; }
     .contact-inner { display: flex; flex-direction: column; gap: 3rem; max-width: 680px; margin: 0 auto; align-items: stretch; }
 
-    /* CONTACT INFO */
     .contact-info h2 { font-size: 1.5rem; font-weight: 800; color: var(--dark); margin-bottom: 0.5rem; }
     .contact-info h2 .italic { font-family: 'Playfair Display', serif; font-style: italic; color: var(--rose); }
     .contact-info p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; margin-bottom: 2rem; }
@@ -89,7 +86,7 @@
     .contact-card-icon.email { background: rgba(176,122,110,0.1); color: var(--rose); }
     .contact-card-text .label { font-size: 0.75rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
     .contact-card-text .value { font-size: 0.92rem; font-weight: 700; color: var(--dark); }
-    .contact-card-arrow { margin-right: auto; color: var(--muted); font-size: 0.8rem; }
+    .contact-card-arrow { margin-left: auto; color: var(--muted); font-size: 0.8rem; }
 
     .whatsapp-big {
       display: flex; align-items: center; justify-content: center; gap: 0.7rem;
@@ -107,7 +104,6 @@
     }
     .response-note i { color: var(--rose); }
 
-    /* CONTACT FORM */
     .contact-form-wrap {
       background: var(--white);
       border-radius: 24px;
@@ -123,13 +119,13 @@
     .form-group label { display: block; font-size: 0.85rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
     .form-group label span { color: var(--rose); }
     .input-wrap { position: relative; }
-    .input-icon { position: absolute; top: 50%; transform: translateY(-50%); right: 13px; color: var(--muted); font-size: 0.9rem; pointer-events: none; }
+    .input-icon { position: absolute; top: 50%; transform: translateY(-50%); left: 13px; color: var(--muted); font-size: 0.9rem; pointer-events: none; }
     .form-group input,
     .form-group select,
     .form-group textarea {
-      width: 100%; padding: 0.8rem 2.5rem 0.8rem 1rem;
+      width: 100%; padding: 0.8rem 1rem 0.8rem 2.5rem;
       border: 1.5px solid rgba(176,122,110,0.22);
-      border-radius: 12px; font-family: 'Tajawal', sans-serif;
+      border-radius: 12px; font-family: 'Poppins', sans-serif;
       font-size: 0.92rem; color: var(--text);
       background: var(--white); transition: border-color 0.2s, box-shadow 0.2s;
       outline: none; resize: none;
@@ -145,7 +141,7 @@
       width: 100%; padding: 1rem;
       background: linear-gradient(135deg, var(--rose), var(--mauve));
       color: #fff; border: none; border-radius: 14px;
-      font-family: 'Tajawal', sans-serif; font-size: 1rem; font-weight: 800;
+      font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 800;
       cursor: pointer; transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
       display: flex; align-items: center; justify-content: center; gap: 0.6rem;
     }
@@ -160,7 +156,6 @@
     .success-msg h4 { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 0.3rem; }
     .success-msg p { font-size: 0.85rem; color: var(--muted); }
 
-    /* FAQ */
     .faq-section { background: var(--cream); padding: 80px 5%; }
     .faq-inner { max-width: 720px; margin: 0 auto; }
     .section-tag { text-transform: uppercase; letter-spacing: 3px; font-size: 0.72rem; color: var(--rose); font-weight: 700; margin-bottom: 0.5rem; display: block; }
@@ -180,8 +175,7 @@
     .faq-item.open .faq-body { max-height: 200px; }
     .faq-body p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; padding-bottom: 1.2rem; }
 
-    /* FOOTER */
-    footer { background: var(--dark); color: rgba(255,255,255,0.6); padding: 3rem 5% 1.5rem; }
+    footer { background: var(--dark); color: rgba(255,255,255,0.7); padding: 3rem 5% 1.5rem; }
     .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
     .footer-brand .nav-logo { color: var(--gold); font-size: 1.6rem; display: block; margin-bottom: 0.8rem; text-decoration: none; font-family: 'Playfair Display', serif; font-style: italic; }
     .footer-brand p { font-size: 0.88rem; line-height: 1.7; max-width: 260px; }
@@ -196,7 +190,7 @@
     .social-links a:hover { background: var(--rose); color: #fff; }
 
     @media (max-width: 760px) {
-      .contact-inner { grid-template-columns: 1fr; }
+      .contact-inner { flex-direction: column; }
       .form-row { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr; }
       nav { padding: 0 1.2rem; }
@@ -211,257 +205,202 @@
 <nav>
   <a href="index.html" class="nav-logo"><img src="logo.png" alt="Makeup Ramli" /></a>
   <ul class="nav-links">
-    <li><a href="index.html">الرئيسية</a></li>
-    <li><a href="course-details.html">تفاصيل الدروس</a></li>
-    <li><a href="contact.html">تواصلي معنا</a></li>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="course-details.html">Detalles del curso</a></li>
+    <li><a href="contact.html">Contacto</a></li>
   </ul>
-  <a href="signin.html" class="nav-cta">سجلي الآن</a>
+  <a href="signin.html" class="nav-cta">Inscribirme</a>
 </nav>
 
-<!-- PAGE HERO -->
 <div class="page-hero">
-  <span class="hero-tag">نحن هنا لك</span>
-  <h1>تواصلي <span class="italic">معنا</span></h1>
+  <span class="hero-tag">Estamos aqu&iacute; para ti</span>
+  <h1>Cont&aacute;ctanos <span class="italic">f&aacute;cilmente</span></h1>
   <div class="divider"></div>
-  <p>هل لديكِ سؤال أو تريدين معرفة المزيد عن دروسنا؟ نحن سعيدات بمساعدتك في أي وقت.</p>
+  <p>&iquest;Tienes alguna pregunta o quieres m&aacute;s informaci&oacute;n? Estamos encantadas de ayudarte.</p>
 </div>
 
-<!-- CONTACT SECTION -->
 <section class="contact-section">
   <div class="contact-inner">
 
-    <!-- INFO -->
     <div class="contact-info">
-      <h2>تحدثي <span class="italic">إلينا</span></h2>
-      <p>نرد على جميع الرسائل خلال 24 ساعة. الطريقة الأسرع هي الواتساب!</p>
+      <h2>Habla con <span class="italic">nosotras</span></h2>
+      <p>El camino m&aacute;s r&aacute;pido es a trav&eacute;s de WhatsApp &mdash; normalmente respondemos en minutos. Tambi&eacute;n puedes escribirnos a trav&eacute;s del formulario o en redes sociales.</p>
 
       <div class="contact-cards">
-        <a href="https://wa.me/+34610652211" class="contact-card" target="_blank">
+        <a href="https://wa.me/+34610652211" target="_blank" class="contact-card">
           <div class="contact-card-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
           <div class="contact-card-text">
-            <div class="label">واتساب</div>
+            <div class="label">WhatsApp</div>
             <div class="value">+34 610 652 211</div>
           </div>
-          <i class="fas fa-arrow-left contact-card-arrow"></i>
+          <i class="fas fa-arrow-right contact-card-arrow"></i>
         </a>
-        <a href="https://instagram.com/maisonramli" class="contact-card" target="_blank">
+        <a href="https://instagram.com/maisonramli" target="_blank" class="contact-card">
           <div class="contact-card-icon instagram"><i class="fab fa-instagram"></i></div>
           <div class="contact-card-text">
-            <div class="label">انستقرام</div>
+            <div class="label">Instagram</div>
             <div class="value">@maisonramli</div>
           </div>
-          <i class="fas fa-arrow-left contact-card-arrow"></i>
+          <i class="fas fa-arrow-right contact-card-arrow"></i>
         </a>
-        <a href="https://tiktok.com/@maisonramli" class="contact-card" target="_blank">
+        <a href="https://tiktok.com/@maisonramli" target="_blank" class="contact-card">
           <div class="contact-card-icon tiktok"><i class="fab fa-tiktok"></i></div>
           <div class="contact-card-text">
-            <div class="label">تيك توك</div>
+            <div class="label">TikTok</div>
             <div class="value">@maisonramli</div>
           </div>
-          <i class="fas fa-arrow-left contact-card-arrow"></i>
-        </a>
-        <a href="mailto:hello@makeupramily.com" class="contact-card">
-          <div class="contact-card-icon email"><i class="fas fa-envelope"></i></div>
-          <div class="contact-card-text">
-            <div class="label">البريد الإلكتروني</div>
-            <div class="value">hello@makeupramily.com</div>
-          </div>
-          <i class="fas fa-arrow-left contact-card-arrow"></i>
+          <i class="fas fa-arrow-right contact-card-arrow"></i>
         </a>
       </div>
 
       <a href="https://wa.me/+34610652211" class="whatsapp-big" target="_blank">
-        <i class="fab fa-whatsapp" style="font-size:1.3rem;"></i>
-        تواصلي الآن عبر الواتساب
+        <i class="fab fa-whatsapp"></i> Escr&iacute;benos por WhatsApp
       </a>
-      <div class="response-note"><i class="fas fa-clock"></i> نرد خلال 24 ساعة في أيام العمل</div>
+      <div class="response-note"><i class="fas fa-clock"></i> Respondemos normalmente en menos de 1 hora</div>
     </div>
 
-    <!-- FORM -->
     <div class="contact-form-wrap">
-      <h3>أرسلي رسالتك</h3>
-      <p>أو اتركي بياناتك وسنتواصل معكِ بأسرع وقت</p>
+      <h3>Env&iacute;a un mensaje</h3>
+      <p>Rellena el formulario y te responderemos lo antes posible</p>
       <form id="contactForm">
-
-        <input type="hidden" name="_subject" value="رسالة تواصل جديدة — ميكاب رملي 📩" />
-
+        <input type="hidden" name="_subject" value="Mensaje de contacto — Makeup Ramli" />
         <div class="form-row">
           <div class="form-group">
-            <label>الاسم <span>*</span></label>
+            <label>Nombre <span>*</span></label>
             <div class="input-wrap">
               <i class="fas fa-user input-icon"></i>
-              <input type="text" name="الاسم" placeholder="اسمك الكريم" required />
+              <input type="text" name="Nombre" placeholder="Tu nombre" required />
             </div>
           </div>
           <div class="form-group">
-            <label>المدينة</label>
+            <label>Tel&eacute;fono</label>
             <div class="input-wrap">
-              <i class="fas fa-map-marker-alt input-icon"></i>
-              <input type="text" name="المدينة" placeholder="مدينتك" />
+              <i class="fas fa-phone input-icon"></i>
+              <input type="tel" name="Teléfono" placeholder="+34 6XX XXX XXX" />
             </div>
           </div>
         </div>
         <div class="form-group">
-          <label>رقم الواتساب <span>*</span></label>
-          <div class="input-wrap">
-            <i class="fas fa-phone input-icon"></i>
-            <input type="tel" name="رقم الواتساب" placeholder="+212 6XX XXX XXX" required />
-          </div>
-        </div>
-        <div class="form-group">
-          <label>موضوع الرسالة</label>
+          <label>Asunto <span>*</span></label>
           <div class="input-wrap">
             <i class="fas fa-tag input-icon"></i>
-            <select name="موضوع الرسالة">
-              <option value="">اختاري الموضوع</option>
-              <option>استفسار عن الدروس الجماعية</option>
-              <option>استفسار عن الدروس الخاصة</option>
-              <option>الأسعار والعروض</option>
-              <option>المواعيد والجدول</option>
-              <option>أخرى</option>
-            </select>
+            <input type="text" name="Asunto" placeholder="&iquest;Sobre qu&eacute; quieres preguntar?" required />
           </div>
         </div>
         <div class="form-group">
-          <label>رسالتك</label>
-          <textarea name="الرسالة" placeholder="اكتبي سؤالك أو ما تودين معرفته..."></textarea>
+          <label>Mensaje <span>*</span></label>
+          <textarea name="Mensaje" placeholder="Escribe tu mensaje aqu&iacute;..." required></textarea>
         </div>
-        <button type="submit" class="submit-btn" id="contactSubmitBtn">
-          <i class="fas fa-paper-plane"></i> أرسلي الرسالة
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <i class="fas fa-paper-plane"></i> Enviar mensaje
         </button>
       </form>
       <div class="success-msg" id="successMsg">
         <div class="check"><i class="fas fa-check-circle"></i></div>
-        <h4>تم الإرسال بنجاح!</h4>
-        <p>شكراً لتواصلك معنا، سنرد عليكِ قريباً على الواتساب.</p>
+        <h4>&iexcl;Mensaje enviado!</h4>
+        <p>Te responderemos lo antes posible. Tambi&eacute;n puedes escribirnos por WhatsApp para una respuesta m&aacute;s r&aacute;pida.</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- FAQ -->
 <section class="faq-section">
   <div class="faq-inner">
-    <span class="section-tag">أسئلة شائعة</span>
-    <h2 class="section-title">أسئلة <span class="italic">تهمّكِ</span></h2>
+    <div class="text-center">
+      <span class="section-tag">Preguntas frecuentes</span>
+      <h2 class="section-title">Preguntas <span class="italic">frecuentes</span></h2>
+      <div class="divider"></div>
+    </div>
     <div class="faqs">
-      <div class="faq-item open">
-        <div class="faq-header" onclick="toggleFaq(this)">
-          <span class="faq-q">هل الدروس مناسبة للمبتدئات تماماً؟</span>
+      <div class="faq-item">
+        <div class="faq-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="faq-q">&iquest;Necesito experiencia previa en maquillaje?</span>
           <i class="fas fa-plus faq-icon"></i>
         </div>
-        <div class="faq-body"><p>نعم بالتأكيد! دروسنا مصممة لكل المستويات، من الصفر المطلق حتى المستوى المتقدم. ستجدين دائماً ما يناسبكِ ويطور مهاراتك.</p></div>
+        <div class="faq-body"><p>No, nuestros cursos est&aacute;n dise&ntilde;ados para todos los niveles. Empezamos desde lo m&aacute;s b&aacute;sico y avanzamos gradualmente hasta las t&eacute;cnicas profesionales.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-header" onclick="toggleFaq(this)">
-          <span class="faq-q">ما الفرق بين الدروس الجماعية والخاصة؟</span>
+        <div class="faq-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="faq-q">&iquest;Cu&aacute;ntas alumnas hay por grupo?</span>
           <i class="fas fa-plus faq-icon"></i>
         </div>
-        <div class="faq-body"><p>الدروس الجماعية تتم مع مجموعة صغيرة (4-6 طالبات) بسعر أقل وجو اجتماعي ممتع. أما الدروس الخاصة فتتميز باهتمام كامل ومخصص لكِ وحدكِ مع برنامج يناسب احتياجاتك تحديداً.</p></div>
+        <div class="faq-body"><p>Los grupos son reducidos, de m&aacute;ximo 6 alumnas, para garantizar atenci&oacute;n personalizada y una experiencia de calidad.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-header" onclick="toggleFaq(this)">
-          <span class="faq-q">كيف تتم الدروس؟ أونلاين أم حضورياً؟</span>
+        <div class="faq-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="faq-q">&iquest;Qu&eacute; incluye el precio del curso?</span>
           <i class="fas fa-plus faq-icon"></i>
         </div>
-        <div class="faq-body"><p>يمكن الاختيار بين الدروس الحضورية (متاحة في مدن محددة) أو عبر الفيديو أونلاين. سنتواصل معكِ بعد التسجيل لتحديد الطريقة الأنسب لكِ.</p></div>
+        <div class="faq-body"><p>El precio de 700&euro; incluye 3 d&iacute;as de formaci&oacute;n intensiva (7 horas/d&iacute;a), materiales de pr&aacute;ctica y seguimiento personal con la formadora.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-header" onclick="toggleFaq(this)">
-          <span class="faq-q">هل هناك ضمان استرداد الأموال؟</span>
+        <div class="faq-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="faq-q">&iquest;C&oacute;mo me inscribo?</span>
           <i class="fas fa-plus faq-icon"></i>
         </div>
-        <div class="faq-body"><p>نعم، نقدم ضمان رضا كامل. إذا لم تكوني راضية عن الدرس الأول لأي سبب، سنسترد لكِ مبلغك كاملاً دون أي أسئلة.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggleFaq(this)">
-          <span class="faq-q">كم يستغرق الرد على التسجيل؟</span>
-          <i class="fas fa-plus faq-icon"></i>
-        </div>
-        <div class="faq-body"><p>نتواصل مع جميع المسجلات خلال 24 ساعة من وقت التسجيل عبر الواتساب لتأكيد الحجز وتحديد الموعد المناسب.</p></div>
+        <div class="faq-body"><p>Puedes inscribirte a trav&eacute;s de nuestra p&aacute;gina de inscripci&oacute;n o contact&aacute;ndonos directamente por WhatsApp. Te confirmaremos tu plaza en 24 horas.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo">ميكاب رملي</a>
-      <p>دروس مكياج خاصة واحترافية — لكل امرأة تستحق أن تشعر بجمالها</p>
+      <a href="index.html" class="nav-logo">Makeup Ramli</a>
+      <p>Cursos de maquillaje profesional &mdash; para cada mujer que merece sentirse bella</p>
     </div>
     <div class="footer-col">
-      <h4>روابط سريعة</h4>
+      <h4>Enlaces r&aacute;pidos</h4>
       <ul>
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="course-details.html">تفاصيل الدروس</a></li>
-        <li><a href="signin.html">التسجيل</a></li>
-        <li><a href="contact.html">تواصلي معنا</a></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="course-details.html">Detalles del curso</a></li>
+        <li><a href="signin.html">Inscripci&oacute;n</a></li>
+        <li><a href="contact.html">Contacto</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>الدروس</h4>
+      <h4>Curso</h4>
       <ul>
-        <li><a href="signin.html?type=group">دروس جماعية</a></li>
-        <li><a href="signin.html?type=private">دروس خاصة</a></li>
+        <li><a href="signin.html">Curso en grupo &mdash; 700 &euro;</a></li>
+        <li><a href="course-details.html">Programa del curso</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 ميكاب رملي · جميع الحقوق محفوظة</span>
+    <span>&copy; 2025 Makeup Ramli &middot; Todos los derechos reservados</span>
     <div class="social-links">
-      <a href="https://instagram.com/maisonramli" target="_blank" aria-label="انستقرام"><i class="fab fa-instagram"></i></a>
-      <a href="https://tiktok.com/@maisonramli" target="_blank" aria-label="تيك توك"><i class="fab fa-tiktok"></i></a>
+      <a href="https://instagram.com/maisonramli" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://tiktok.com/@maisonramli" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
     </div>
   </div>
 </footer>
 
 <script>
-  function toggleFaq(header) {
-    const item = header.closest('.faq-item');
-    const wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!wasOpen) item.classList.add('open');
-  }
-
-  // Submit via AJAX — show success message on the page, never leave
   document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const btn = document.getElementById('contactSubmitBtn');
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
+    const btn = document.getElementById('submitBtn');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
     btn.disabled = true;
-
     const data = new FormData(this);
-
     try {
-      const res = await fetch('https://formspree.io/f/xqeoyevp', {
-        method: 'POST',
-        body: data,
+      const res = await fetch('https://formspree.io/f/xdavwabe', {
+        method: 'POST', body: data,
         headers: { 'Accept': 'application/json' }
       });
       if (res.ok) {
-        document.getElementById('contactForm').style.display = 'none';
+        this.style.display = 'none';
         document.getElementById('successMsg').style.display = 'block';
       } else {
-        btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> حدث خطأ، حاولي مجدداً';
+        btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error, inténtalo de nuevo';
         btn.disabled = false;
       }
     } catch {
-      btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> حدث خطأ، حاولي مجدداً';
+      btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error, inténtalo de nuevo';
       btn.disabled = false;
     }
   });
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
